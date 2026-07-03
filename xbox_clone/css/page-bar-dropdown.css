@@ -1,0 +1,976 @@
+/*
+Same CSS file for any page bar. 
+
+Spec:
+    <div class="m-in-page-navigation">
+        White page bar for use with standard UHF on white themed pages
+
+    <div class="m-in-page-navigation trans">
+        Trans page bar for use with RenderDarkHeader on dark themed pages.
+
+Modifiers:
+
+    .trans.start-dark 
+        overrides initial total transparency on white hero images, starts with dark background
+
+    .trans.standard-header 
+        overrides positioning of the page bar to use trans page bar on on pages with standard UHF
+
+    Classes can be combined where it makes sense to do so:
+    <div class="m-in-page-navigation trans standard-header start-dark">
+        this will effectively put a dark transparent header on a white page
+
+
+    .under-hero, .trans.under-hero
+        For pages where the page bar is supposed to appear after the hero scrolls out of viewport.
+        Put the page bar HTML module under the hero HTML and apply this class.
+        Doesn't make sense to use with .standard-header or .start-dark.
+
+    .highlight-disabled
+        NOT CURRENTLY ACTIVE -- will override page bar link highlighting as the page scrolls, when that is implemented
+
+*/
+
+.m-in-page-navigation {
+    position: relative;
+    height: 0px;
+    width: 100%;
+    z-index: 500;
+}
+
+.m-in-page-navigation div[data-js-in-page-navigation-wrapper="true"] {
+    background: #fff;
+}
+
+.trans.m-in-page-navigation div[data-js-in-page-navigation-wrapper="true"] {
+    background-color: none;
+    background: none;
+}
+
+.trans.start-dark.m-in-page-navigation div[data-js-in-page-navigation-wrapper="true"] {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 1083px) {
+    div.m-in-page-navigation {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media screen and (min-width: 860px) and (max-width: 1083px) {
+    .m-in-page-navigation div[data-js-in-page-navigation-wrapper="true"] {
+        padding-left: 27px;
+        padding-right: 32px;
+    }
+}
+
+@media screen and (max-width: 859px) {
+    .m-in-page-navigation div[data-js-in-page-navigation-wrapper="true"] {
+        padding-left: 10px;
+        padding-right: 16px;
+    }
+}
+
+.m-in-page-navigation,
+nav.c-in-page-navigation.f-sticky {
+    border-bottom: 1px solid rgba(0, 0, 0, .2) !important;
+}
+
+.m-in-page-navigation,
+nav.c-in-page-navigation.f-sticky {
+    background: #fff;
+}
+
+
+/*
+  .m-in-page-navigation .CTAdiv button.c-call-to-action:focus,
+  .m-in-page-navigation .CTAdiv button.c-call-to-action:hover {
+    color: inherit;
+    border-color: inherit;
+  }
+  */
+
+.m-in-page-navigation.trans .CTAdiv button.c-call-to-action,
+.m-in-page-navigation.trans .CTAdiv button.c-call-to-action:focus,
+.m-in-page-navigation.trans .CTAdiv button.c-call-to-action:hover {
+    outline: none;
+    background-color: transparent !important;
+    color: #9bf00b !important;
+    border-color: #9bf00b !important;
+}
+
+.m-in-page-navigation.trans nav.c-in-page-navigation .CTAdiv a.c-call-to-action.legacy:focus,
+.m-in-page-navigation.trans nav.c-in-page-navigation .CTAdiv a.c-call-to-action.legacy:hover {
+    color: #fff !important;
+    border-color: #9bf00b;
+}
+
+nav.c-in-page-navigation {
+    padding: 10px 8.6% 6px;
+}
+
+nav.c-in-page-navigation {
+    /*padding: 10px 8.6% 6px;*/
+    padding-top: 10px;
+    padding-bottom: 6px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@media screen and (min-width: 1084px) {
+    nav.c-in-page-navigation {
+        padding-left: calc(5% + 13px);
+        padding-right: calc(5% + 8px);
+    }
+}
+
+nav.c-in-page-navigation ul {
+    width: auto !important;
+}
+
+nav.c-in-page-navigation h3 {
+    float: left;
+    padding-top: 9px;
+    padding-right: 25px;
+}
+
+nav.c-in-page-navigation .CTAdiv {
+    margin-left: auto;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation>ul li>a {
+    padding-top: 9px;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation>ul li>a:focus {
+    border-style: dashed;
+}
+
+.high-contrast-mode nav.c-in-page-navigation .CTAdiv a.c-call-to-action:focus {
+    border-style: dashed;
+    background-color: #fff !important;
+}
+
+
+/*
+  .m-in-page-navigation ul li a.c-hyperlink:hover {
+    color: inherit;
+  }
+  */
+
+.m-in-page-navigation nav.c-in-page-navigation ul .c-hyperlink {
+    background-color: transparent;
+    border: none;
+    text-decoration: none !important;
+    font-size: 15px;
+    padding-top: 9px;
+    padding-bottom: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation .c-navigation-menu ul .c-hyperlink {
+    margin: 0;
+    outline-offset: -3px;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:hover,
+.m-in-page-navigation nav.c-in-page-navigation>ul .c-hyperlink.f-active,
+.m-in-page-navigation a:not(.f-image):not(.x-hidden-focus).c-hyperlink:focus,
+.m-in-page-navigation a:not(.f-image).c-hyperlink:hover {
+    text-decoration: underline !important;
+    /*color: inherit;*/
+}
+
+.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:focus {
+    border: 0 !important;
+    outline-width: 2px;
+    outline-style: dashed !important;
+    outline-offset: 0px;
+    color: #107c10 !important;
+}
+
+nav.c-in-page-navication .c-hyperlink:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    border: 2px solid transparent;
+}
+
+nav.c-in-page-navication .c-hyperlink:focus:before {
+    border-color: rgba(255, 255, 255, .6);
+}
+
+
+/* =========================================== */
+
+
+/* Transparent page bar style overrides */
+
+
+/* Add .trans to .m-in-page-navigation */
+
+.m-in-page-navigation,
+nav.c-in-page-navigation.f-sticky {
+    border-bottom: none;
+}
+
+.trans.m-in-page-navigation {
+    border-bottom: none !important;
+    background: none;
+}
+
+.trans.m-in-page-navigation.light {
+    background: rgba(0, 0, 0, .7);
+}
+
+.trans nav.c-in-page-navigation.f-sticky {
+    background: rgba(0, 0, 0, .7);
+}
+
+.trans nav.c-in-page-navigation p {
+    color: #fff !important;
+}
+
+.trans nav.c-in-page-navigation .c-hyperlink,
+.trans nav.c-link-navigation a.c-call-to-action.green-brdr {
+    color: #fff !important;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:focus {
+    color: #107c10 !important;
+    background-color: transparent !important;
+}
+
+.trans.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:hover,
+.trans.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:focus {
+    color: #9bf00b !important;
+}
+
+.trans nav.c-in-page-navigation h3 {
+    color: #fff !important;
+}
+
+.trans nav.c-in-page-navigation .CTAdiv a.c-call-to-action,
+.trans nav.c-in-page-navigation .CTAdiv a.c-call-to-action,
+.trans nav.c-in-page-navigation .CTAdiv a:not(.x-hidden-focus).c-call-to-action:focus,
+.trans nav.c-in-page-navigation .CTAdiv a.c-call-to-action:hover {
+    background: none;
+    color: #9bf00b;
+    border-color: #9bf00b;
+}
+
+nav.c-in-page-navigation>ul li>a.c-hyperlink {
+    color: #000;
+}
+
+nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active {
+    color: #107c10 !important;
+    text-decoration: underline;
+}
+
+
+/*
+  nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active:after {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: -8px;
+    width: calc(16px + 100%);
+    height: 100%;
+    border: 2px solid #107c10;
+  }
+  */
+
+.high-contrast-mode nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active:after {
+    border-style: dashed;
+}
+
+
+/*
+  nav.c-in-page-navigation a.c-hyperlink {
+    text-decoration: none;
+  }
+  */
+
+.trans nav.c-in-page-navigation>ul li>a.c-hyperlink:focus,
+.trans nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active {
+    color: #9bf00b !important;
+}
+
+
+/*
+  .trans nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active:after {
+    border-color: #9bf00b !important;
+  }
+  */
+
+
+/* END Transparent style overrides */
+
+
+/* =========================================== */
+
+@media screen and (max-width: 1400px) {
+    /*nav.c-in-page-navigation {
+  padding: 10px 5.4% 6px;
+  }*/
+}
+
+@media screen and (max-width: 859px) {
+    nav.c-in-page-navigation {
+        padding-top: 24px;
+    }
+    nav.c-in-page-navigation ul {
+        display: none;
+    }
+    nav.c-in-page-navigation h3 {
+        padding-bottom: 20px;
+    }
+    .m-in-page-navigation {
+        z-index: 500;
+    }
+}
+
+
+/* tweaks learned from XGP */
+
+nav.c-in-page-navigation {
+    align-items: center;
+    /* flex vertical centering */
+}
+
+nav.c-in-page-navigation p[class^="c-heading"] {
+    padding: 0 24px 5px 0;
+    font-weight: 700;
+    /* bottom padding can be set with flex align items center */
+}
+
+nav.c-in-page-navigation {
+    border-bottom: none !important;
+}
+
+.CTAdiv>a:not(:last-child) {
+    margin-right: 32px;
+}
+
+
+/* page bar tweaks learned from XGP */
+
+nav.c-in-page-navigation ul {
+    width: auto !important;
+    margin-left: 0 !important;
+}
+
+@media screen and (max-width: 1083px) {
+    nav.c-in-page-navigation {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    nav.c-in-page-navigation ul {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 859px) {
+    div.trans.m-in-page-navigation:not(.standard-header) {
+        top: 0;
+    }
+}
+
+@media screen and (min-width: 860px) {
+    div.trans.m-in-page-navigation:not(.standard-header) {
+        top: 54px;
+    }
+}
+
+div.m-in-page-navigation nav.c-in-page-navigation {
+    padding-top: 10px;
+    padding-bottom: 6px;
+    min-height: 60px;
+}
+
+
+/* fix sticky header when zoomed */
+
+@media (max-width: 767px) and (orientation: landscape) {
+    nav.c-in-page-navigation.f-sticky {
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 859px) {
+    nav.c-in-page-navigation.f-sticky {
+        padding-left: 10px;
+        padding-right: 16px;
+    }
+}
+
+@media screen and (min-width: 1084px) {
+    nav.c-in-page-navigation.f-sticky {
+        padding-left: calc(5% + 13px);
+        padding-right: calc(5% + 8px);
+    }
+}
+
+.CTAdiv>.second-cta {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 12px;
+}
+
+@media screen and (max-width: 1083px) {
+    .CTAdiv>.second-cta {
+        display: none;
+    }
+}
+
+.CTAdiv>.second-cta a {
+    display: inline;
+}
+
+.CTAdiv>span {
+    display: inline-block;
+    padding-right: 10px;
+    font-style: italic;
+}
+
+div.trans.m-in-page-navigation .CTAdiv>span {
+    color: #ffffff;
+}
+
+@media screen and (max-width: 639px) {
+    .CTAdiv>span {
+        display: none;
+    }
+}
+
+
+/* end page par tweaks */
+
+@media screen and (min-width: 1805px) {
+    div.m-in-page-navigation nav.c-in-page-navigation.f-sticky,
+    div.m-in-page-navigation nav.c-in-page-navigation {
+        padding-left: calc(((100% - 1600px) / 2) + 13px);
+        padding-right: calc(((100% - 1600px) / 2) + 8px);
+    }
+}
+
+
+/* new dropdown subnav styles */
+
+nav.c-in-page-navigation .c-navigation-menu button[class^="c-heading-"] {
+    padding: 0px 10px 0px 5px;
+    margin-bottom: 6px;
+}
+
+@media screen and (max-width: 480px) {
+    nav.c-in-page-navigation .c-navigation-menu button[class^="c-heading-"] {
+        padding-left: 0;
+        font-size: 15px;
+        line-height: 1.1;
+        letter-spacing: -.1px;
+    }
+}
+
+.m-in-page-navigation .c-navigation-menu {
+    display: inline-block;
+}
+
+.m-in-page-navigation .c-navigation-menu ul {
+    background: #f2f2f2;
+    min-width: 200px;
+    max-width: 280px;
+}
+
+.m-in-page-navigation.trans .c-navigation-menu ul {
+    background: rgba(0, 0, 0, 1);
+}
+
+.m-in-page-navigation .c-navigation-menu a,
+.m-in-page-navigation .c-navigation-menu button {
+    background: none;
+}
+
+.m-in-page-navigation .c-navigation-menu a,
+.m-in-page-navigation .c-navigation-menu a:hover,
+.m-in-page-navigation .c-navigation-menu a:focus {
+    color: #000 !important;
+}
+
+.m-in-page-navigation.trans .c-navigation-menu a,
+.m-in-page-navigation.trans .c-navigation-menu a:hover {
+    color: #fff !important;
+}
+
+
+/*.m-in-page-navigation.trans .c-navigation-menu a.f-active,*/
+
+.m-in-page-navigation.trans .c-navigation-menu a:focus {
+    color: #9bf00b !important;
+}
+
+.m-in-page-navigation .c-navigation-menu a.c-hyperlink:not(.f-image):focus:not(.x-hidden-focus) {
+    background: none;
+}
+
+nav.c-in-page-navigation>p {
+    display: none;
+}
+
+.m-in-page-navigation .c-navigation-menu>button:hover:not(.x-hidden-focus),
+.m-in-page-navigation .c-navigation-menu>button:focus:not(.x-hidden-focus),
+.m-in-page-navigation .c-navigation-menu button:hover,
+.m-in-page-navigation .c-navigation-menu button[aria-expanded="true"] {
+    background: none;
+}
+
+.m-in-page-navigation.trans .c-navigation-menu button:hover {
+    color: #fff;
+}
+
+.m-in-page-navigation .c-navigation-menu>button[aria-expanded="true"] {
+    border: 2px solid transparent;
+}
+
+.m-in-page-navigation .c-navigation-menu>button:focus,
+.m-in-page-navigation .c-navigation-menu>button:active {
+    outline: 2px dashed #000 !important;
+    border: 2px dashed #fff !important;
+}
+
+.m-in-page-navigation .c-navigation-menu li button:focus,
+.m-in-page-navigation .c-navigation-menu li button:active {
+    outline: 2px dashed #000 !important;
+    border: 0 !important;
+}
+
+.trans.m-in-page-navigation .c-navigation-menu li button:focus,
+.trans.m-in-page-navigation .c-navigation-menu li button:active {
+    outline: 2px dashed #fff !important;
+}
+
+@media screen and (min-width: 1084px) {
+    .m-in-page-navigation .c-navigation-menu {
+        display: none;
+    }
+    nav.c-in-page-navigation>p {
+        display: block;
+    }
+}
+
+.m-in-page-navigation .c-navigation-menu [class^="c-heading-"]:after {
+    display: inline-block;
+}
+
+.m-in-page-navigation .c-navigation-menu button,
+.m-in-page-navigation .c-navigation-menu>button:after {
+    color: #000 !important;
+}
+
+.m-in-page-navigation.trans .c-navigation-menu button,
+.m-in-page-navigation.trans .c-navigation-menu>button:after {
+    color: #fff !important;
+}
+
+
+/* Narrator tabbing to pseudo element */
+
+.c-navigation-menu>button:after {
+    content: "" / "" !important;
+}
+
+
+/* ====== */
+
+
+/* link highlighting is not reliable in all situations */
+
+
+/* .highlight-disabled overrides that highlighting when necessary */
+
+
+/* ====== */
+
+.highlight-disabled nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active {
+    color: #000;
+}
+
+.highlight-disabled.trans nav.c-in-page-navigation>ul li>a.c-hyperlink.f-active {
+    color: #fff !important;
+}
+
+div.under-hero.trans.m-in-page-navigation:not(.standard-header) {
+    top: 0px !important;
+}
+
+.under-hero.m-in-page-navigation:not(.f-sticky) div[data-js-in-page-navigation-wrapper="true"],
+.under-hero nav.c-in-page-navigation:not(.f-sticky) {
+    /*display: none;*/
+    height: 0px;
+    overflow: hidden;
+    min-height: 0;
+    padding: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.under-hero nav.c-in-page-navigation {
+    opacity: 0;
+    transition: opacity 250ms;
+    /*transition: visibility 0s linear 300ms, opacity 300ms;
+    transition-delay: 2s, 0s, 0s;*/
+}
+
+.under-hero nav.c-in-page-navigation.f-sticky {
+    visibility: visible;
+    height: auto;
+    opacity: 1;
+    transition: visibility 0s, opacity 300ms;
+}
+
+.m-in-page-navigation button[data-cta-href] {
+    margin-top: 0 !important;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 100ms;
+    transition-delay: 0s, 0s;
+}
+
+.m-in-page-navigation button[data-cta-href].to-hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility 0s, opacity 100ms;
+    transition-delay: 100ms, 0s;
+}
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+    /* always show pagebar button in IE */
+    .m-in-page-navigation button[data-cta-href].to-hide {
+        opacity: 1;
+        visibility: visible;
+        transition: none;
+        transition-delay: 0s;
+    }
+}
+
+@media screen and (max-width: 1399px) {
+    .m-in-page-navigation nav.c-in-page-navigation>ul li>a {
+        margin: 0 16px;
+    }
+    nav.c-in-page-navigation p[class^="c-heading"] {
+        padding-right: 16px;
+    }
+}
+
+.pagebar-target {
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    left: 0;
+    transform: translateY(-64px);
+}
+
+
+/* MWF sometimes(?) adds a 12px top margin */
+
+@media only screen and (min-width: 1779px) and (min-width: 860px) {
+    .c-uhfh.f-transparent {
+        margin-top: 0px !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .CTAdiv button,
+    .CTAdiv a {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+.m-in-page-navigation.trans .CTAdiv>button,
+button.green-brdr,
+button.green-brdr:hover {
+    border: 1px solid #9bf00b !important;
+}
+
+.CTAdiv button.c-button,
+.CTAdiv>span {
+    vertical-align: middle;
+}
+
+button.green-brdr:focus {
+    outline: 2px dashed #9bf00b !important;
+}
+
+.CTAdiv button.hidden {
+    opacity: 0;
+    transition: 40ms opacity ease-in-out;
+    cursor: default;
+}
+
+.m-in-page-navigation:not(.trans) .CTAdiv button.c-call-to-action:hover {
+    background: #9bf00b;
+}
+
+.m-in-page-navigation:not(.trans) ul li .c-hyperlink:hover {
+    color: #107c10
+}
+
+@media only screen and (max-height: 360px) {
+    .c-navigation-menu>ul {
+        max-height: 45vh;
+        overflow-y: auto;
+    }
+}
+
+
+/* ================================ */
+
+.m-in-page-navigation nav.c-in-page-navigation ul button {
+    position: relative;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation ul button:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    border: 1px solid transparent;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation ul button:focus:before {
+    border-color: rgba(255, 255, 255, .6);
+}
+
+.m-in-page-navigation nav.c-in-page-navigation ul a:focus,
+.m-in-page-navigation nav.c-in-page-navigation ul button:focus {
+    outline-color: #000 !important;
+    text-decoration: underline !important;
+}
+
+.trans.m-in-page-navigation nav.c-in-page-navigation ul a:focus,
+.trans.m-in-page-navigation nav.c-in-page-navigation ul button:focus {
+    outline-color: #fff !important;
+}
+
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:hover,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:focus,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button[aria-expanded="true"],
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button.c-call-to-action:focus {
+    background-color: #fff !important;
+}
+
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:hover,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:hover:after,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:focus:after,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button[aria-expanded="true"]:after,
+.high-contrast-mode.black-on-white #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button.c-call-to-action:focus:after {
+    color: #000 !important;
+}
+
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:hover,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:focus,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button[aria-expanded="true"],
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button.c-call-to-action:focus {
+    background-color: #000 !important;
+}
+
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:hover,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:hover:after,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button:focus:after,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button[aria-expanded="true"]:after,
+.high-contrast-mode.white-on-black #BodyContent div.trans.m-in-page-navigation nav.c-in-page-navigation button.c-call-to-action:focus:after {
+    color: #fff !important;
+}
+
+.trans.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:hover,
+.trans.m-in-page-navigation nav.c-in-page-navigation .c-hyperlink:focus {
+    color: #9bf00b !important;
+}
+
+.m-in-page-navigation nav.c-in-page-navigation ul a:focus,
+.m-in-page-navigation nav.c-in-page-navigation ul button:focus {
+    outline: 2px dashed #000 !important;
+    text-decoration: underline !important;
+}
+
+.trans.m-in-page-navigation nav.c-in-page-navigation ul a:focus,
+.trans.m-in-page-navigation nav.c-in-page-navigation ul button:focus {
+    outline-color: #fff !important;
+}
+
+
+/* MWF script assigning .f-active in dropdown for some reason */
+
+.m-in-page-navigation .c-navigation-menu a.f-active {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.m-in-page-navigation.trans .c-navigation-menu a.f-active {
+    color: white !important;
+}
+
+@media screen and (min-width: 1084px) and (max-width: 1604px) {
+    .break.m-in-page-navigation .c-navigation-menu {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1084px) and (max-width: 1604px) {
+    .break1604.m-in-page-navigation .c-navigation-menu>p,
+    .break1604.m-in-page-navigation .c-navigation-menu>p+ul {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1084px) and (max-width: 1420px) {
+    .break1420.m-in-page-navigation .c-navigation-menu {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1084px) and (max-width: 1420px) {
+    .break1420.m-in-page-navigation .c-in-page-navigation>p,
+    .break1420.m-in-page-navigation .c-in-page-navigation>p+ul {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1084px) and (max-width: 1600px) {
+    .break1600.m-in-page-navigation .c-navigation-menu {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 1084px) and (max-width: 1600px) {
+    .break1600.m-in-page-navigation .c-in-page-navigation>p,
+    .break1600.m-in-page-navigation .c-in-page-navigation>p+ul {
+        display: none;
+    }
+}
+
+.m-in-page-navigation .c-navigation-menu ul button.c-hyperlink:after {
+    display: inline-block !important;
+}
+
+.m-in-page-navigation .c-in-page-navigation li>button[data-cta-href] {
+    display: flex;
+    align-items: center;
+}
+
+.m-in-page-navigation .c-in-page-navigation li:has(button[data-cta-href]):after {
+    /* preloading hover glyph on parent*/
+    content: ""/"";
+    opacity: 0;
+    height: 0;
+    width: 0;
+    background-image: url(../fonts/cd0705b1-badb-4762-b6b9-d485bf7dcd14.svg);
+}
+
+.m-in-page-navigation .c-in-page-navigation li>button[data-cta-href]:after {
+    content: ""/"";
+    display: inline-block;
+    position: relative;
+    background-image: url(../fonts/042c687d-62f1-429d-804c-a623beaa0eb7.svg);
+    background-size: 100% auto;
+    font-size: inherit;
+    width: 0.7em;
+    height: .7em;
+    margin-left: 10px;
+    left: 0;
+    top: 0;
+}
+
+.m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:active:after,
+.m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:focus:after,
+.m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:hover:after {
+    background-image: url(../fonts/cd0705b1-badb-4762-b6b9-d485bf7dcd14.svg);
+}
+
+.m-in-page-navigation.trans .c-in-page-navigation li:has(button[data-cta-href]):after {
+    /* preloading hover glyph on parent*/
+    background-image: url(../fonts/00009acb-8e7c-448e-8c37-ebc565bb31ea.svg);
+}
+
+.m-in-page-navigation.trans .c-in-page-navigation li>button[data-cta-href]:after {
+    background-image: url(../fonts/74e47d5f-8e39-41ca-97a8-dc2931692450.svg);
+}
+
+.m-in-page-navigation.trans .c-in-page-navigation li button[data-cta-href]:active:after,
+.m-in-page-navigation.trans .c-in-page-navigation li button[data-cta-href]:focus:after,
+.m-in-page-navigation.trans .c-in-page-navigation li button[data-cta-href]:hover:after {
+    background-image: url(../fonts/00009acb-8e7c-448e-8c37-ebc565bb31ea.svg);
+}
+
+@media screen and (-ms-high-contrast:black-on-white),
+screen and (forced-colors: active) and (prefers-color-scheme: light) {
+    .m-in-page-navigation .c-in-page-navigation li>button[data-cta-href]:after,
+    .m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:active:after,
+    .m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:focus:after,
+    .m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:hover:after,
+    .m-in-page-navigation.trans .c-in-page-navigation li>button[data-cta-href]:after,
+    .m-in-page-navigation.trans .c-in-page-navigation li button[data-cta-href]:active:after,
+    .m-in-page-navigation.trans .c-in-page-navigation li button[data-cta-href]:focus:after,
+    .m-in-page-navigation.trans .c-in-page-navigation li button[data-cta-href]:hover:after {
+        background-image: url(../fonts/042c687d-62f1-429d-804c-a623beaa0eb7.svg);
+    }
+    
+    .m-in-page-navigation .c-in-page-navigation li>button[data-cta-href] span {
+        position: relative;
+    }
+    .m-in-page-navigation .c-in-page-navigation li>button[data-cta-href] span:after {
+        content: "";
+        position: absolute;
+        height: calc(100% - 3px);
+        width: 30px;
+        background-color: white;
+        z-index: -1;
+        top: 1px;
+        right: -29px;
+    }
+}
+
+@media screen and (-ms-high-contrast:white-on-black),
+screen and (forced-colors: active) and (prefers-color-scheme: dark) {
+    .m-in-page-navigation .c-in-page-navigation li>button[data-cta-href]:after {
+        background-image: url(../fonts/74e47d5f-8e39-41ca-97a8-dc2931692450.svg);
+    }
+    .m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:active:after,
+    .m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:focus:after,
+    .m-in-page-navigation .c-in-page-navigation li button[data-cta-href]:hover:after {
+        background-image: url(../fonts/00009acb-8e7c-448e-8c37-ebc565bb31ea.svg);
+    }
+    .m-in-page-navigation.trans .c-in-page-navigation li>button[data-cta-href]:after {
+        background-image: url(../fonts/74e47d5f-8e39-41ca-97a8-dc2931692450.svg);
+    }
+
+}
+
+
+
+/* JS is applying f-hide to page bar elements for some reason. */
+
+    div.m-in-page-navigation.f-hide {
+        visibility: visible;
+    }
+    nav.c-in-page-navigation.f-hide {
+        height: auto;
+        overflow: visible;
+        visibility: visible;
+    }

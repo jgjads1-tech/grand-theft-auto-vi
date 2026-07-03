@@ -1,0 +1,881 @@
+/* custom snow bird overrides*/
+.c-drawer>button[aria-expanded="false"]::before, .c-drawer .f-toggle[aria-expanded="false"]::before, .c-drawer>header>button[aria-expanded="false"]::before, .c-drawer>header .f-toggle[aria-expanded="false"]::before, .c-drawer .c-drawer-toggle[aria-expanded="false"]::before {
+    content: "" !important;
+  }
+  
+  .c-paragraph-1, .c-paragraph-2 {
+    font-weight: 400 !important;
+  }
+  .c-heading, .c-heading-1, .c-heading-2, .c-heading-3, .c-heading-4 {
+  font-weight: 700 !important;
+  }
+  .m-content-placement-item .c-heading, .m-content-placement-item .c-heading-1,
+  .m-content-placement-item .c-heading-2, .m-content-placement-item .c-heading-3,
+  .m-content-placement-item .c-heading-4 {
+  font-weight: 600 !important;
+  }
+  
+  
+  .c-heading-1a {
+    padding: 6px 0 6px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-family: SegoeProBlack, Segoe UI,SegoeUI,Helvetica,Arial,sans-serif;
+  }
+  
+  
+  .c-heading-1L {
+    padding: 6px 0 6px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    font-family: SegoeProBlack, Segoe UI,SegoeUI,Helvetica,Arial,sans-serif;
+  }
+    
+  
+  @media screen and (min-width: 0px) {
+    .c-heading-1a + .jump-g.jump-b {
+   top:4px;
+   }
+    .c-heading-1a {
+        font-size: 46px;
+        line-height: 46px;
+    }
+    .c-heading-1L {
+        font-size: 56px;
+        line-height: 56px;
+    }
+    .jump-g.jump-b {
+        font-size: 38px;
+    }
+  .c-heading-1a + .jump-g.jump-b {
+        font-size: 45px;
+        line-height: 25px;
+    }
+  }
+  @media screen and (min-width: 360px) {
+    .c-heading-1L {
+        font-size: 66px;
+        line-height: 66px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .c-heading-1a {
+        font-size: 62px;
+        line-height: 60px;
+    }
+  }
+  @media screen and (min-width: 1084px) {
+  
+    .c-heading-1L {
+        font-size: 86px;
+        line-height: 82px;
+    }
+    .jump-g.jump-b {
+        font-size: 46px;
+    }
+  }    
+  
+  
+  
+  @media screen and (min-width: 1400px) {
+     .c-heading-1L {
+      font-size: 120px;
+      line-height: 118px;
+  }
+    .jump-g.jump-b {
+        font-size: 60px;
+       line-height: 108px;
+    }
+  .c-heading-1a + .jump-g.jump-b {
+        font-size: 66px;
+        line-height: 42px;
+    }
+  }
+  
+  @media screen and (min-width: 1605px) {
+    .c-heading-1a {
+        font-size: 86px;
+        line-height: 82px;
+    }
+  
+    .c-heading-1L {
+        font-size: 120px;
+        line-height: 118px;
+    }
+  
+  }
+  
+  .c-glyph::before, .c-glyph::after {
+    font-family: MWFMDL2-Xbox;
+  }
+  
+  .c-glyph::after {
+    margin-left: 10px !important;
+  }
+  
+  .jump-g {
+    font-family: MWFMDL2-Xbox;
+    color: #9bf00b !important;
+    font-size: 43px;
+   /* line-height: 43px; */
+  }
+  
+  
+  /* jumpg animated start off left */
+  .jumpgoffleft {
+    right: 100%;
+    opacity: 0;
+  }
+  /* end jumpg animated start */
+  .m-hero-item .c-subheading, .c-hero .c-subheading, .c-subheading, .c-subheading-1, .c-subheading-2, .c-subheading-3, .c-subheading-4 {
+    font-weight: 400;
+  }
+  .m-hero-item .c-group > .c-call-to-action, .c-hero .c-group > .c-call-to-action {
+    margin-right: 0px;
+  }
+  @media only screen and (max-width:499px) {
+  .m-hero-item .c-group > .c-call-to-action + .c-call-to-action, .c-hero .c-group > .c-call-to-action + .c-call-to-action {
+    padding: 10px 0 7px;
+  }
+  .m-hero-item .c-group > .c-call-to-action, .c-hero .c-group > .c-call-to-action  {
+    margin-right: 10px;
+  }
+  }
+  /*snow bird CTAs*/
+  
+  
+  a.c-call-to-action.lime-green-c {
+    color: #9bf00b !important;
+    background: none !important;
+  }
+  
+  
+  a.c-call-to-action.lime-green-c:hover {
+    color: #75b308;
+    background: none !important;
+  }
+  
+  a.c-call-to-action, 
+  button.c-call-to-action, 
+  .c-action-trigger, 
+  .c-button,
+  button.c-action-trigger, 
+  button.c-button {
+      font-family: SegoeProBlack, Segoe UI,SegoeUI,Helvetica,Arial,sans-serif;
+  }
+  
+  a.c-call-to-action, button.c-call-to-action, 
+  button.c-button.c-call-to-action,
+  button.c-call-to-action.green-brdr:hover,
+  .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action {
+    border: 1px solid transparent;
+    outline: 1px solid transparent;
+  }
+  
+  
+  a.c-call-to-action, button.c-call-to-action,
+  .theme-light a.c-call-to-action,
+  .theme-dark .theme-light a.c-call-to-action,
+  .theme-light button.c-call-to-action,
+  .theme-dark .theme-light button.c-call-to-action,
+  .theme-dark a.c-call-to-action,
+  .theme-light .theme-dark a.c-call-to-action,
+  .theme-dark button.c-call-to-action,
+  .theme-light .theme-dark button.c-call-to-action {
+    padding: 5px 20px 5px 22px;
+    color: #054b16;
+    font-weight: 900;
+    background: #9bf00b;
+  }
+  
+   
+    a:not(.x-hidden-focus).c-call-to-action:focus,
+    .theme-light a:not(.x-hidden-focus).c-call-to-action:focus,
+    .theme-dark a:not(.x-hidden-focus).c-call-to-action:focus
+    .theme-black a:not(.x-hidden-focus).c-call-to-action:focus,
+    a.c-call-to-action:hover,
+    .theme-light a.c-call-to-action:hover,
+    .theme-dark a.c-call-to-action:hover,
+    .theme-black a.c-call-to-action:hover {
+        background: #8bd80a;
+    }
+    a:not(.x-hidden-focus).c-call-to-action:focus {outline: 2px dashed #000; border: 2px dashed #fff;}
+  a:not(.x-hidden-focus).c-call-to-action.f-image:focus {outline: 2px dashed #000; border: 2px dashed #fff;}
+  
+  a.c-call-to-action.f-image:hover,
+  .theme-light a.c-call-to-action.f-image:hover,
+  .theme-dark a.c-call-to-action.f-image:hover,
+  .theme-black a.c-call-to-action.f-image:hover {background: transparent;}
+  
+  .m-image-intro :not(.f-primary):not(.f-secondary):not(.f-heavyweight).c-call-to-action,
+  .c-feature :not(.f-primary):not(.f-secondary):not(.f-heavyweight).c-call-to-action,
+  .m-feature :not(.f-primary):not(.f-secondary):not(.f-heavyweight).c-call-to-action,
+  .m-content-placement-item a:not(.f-primary):not(.f-secondary):not(.f-heavyweight).c-call-to-action,
+  .c-content-placement a:not(.f-primary):not(.f-secondary):not(.f-heavyweight).c-call-to-action {
+  padding:10px 3px 7px 0;
+  }
+  .theme-black a.c-call-to-action:focus, .theme-light .theme-black a.c-call-to-action:focus, .theme-black button.c-call-to-action:focus, .theme-light .theme-black button.c-call-to-action:focus {
+    border-color: #fff;
+    outline-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  .theme-light a.c-call-to-action:focus, .theme-black .theme-light a.c-call-to-action:focus, .theme-light button.c-call-to-action:focus, .theme-black .theme-light button.c-call-to-action:focus {
+    border-color: rgba(0, 0, 0, 0.6);
+    outline-color: #fff;
+  }
+  .m-feature .c-call-to-action:not(.f-heavyweight):not(.f-primary):not(.f-secondary):focus:not(.x-hidden-focus) {
+     border: 2px dashed #000;
+     outline: 2px dashed #fff;
+  }
+  @media screen and (-ms-high-contrast: active) {
+  .m-feature .c-call-to-action:not(.f-heavyweight):not(.f-primary):not(.f-secondary):focus:not(.x-hidden-focus) {
+     border: 2px dashed #000 !important;
+     outline: 2px dashed #fff !important;
+  }
+  }
+  
+  /* buttons */
+  button.c-button {
+    font-weight: 900;
+  }
+  
+    button.c-button:hover {
+        text-decoration: underline;
+    }
+  .c-group button.c-action-trigger {padding: 10px 3px 7px 0; margin: 0 2px; vertical-align: middle; }
+  /* button as a button (normal button) */
+  /*theme light and no theme */
+  button.c-button,
+  .theme-light button.c-button,
+  a.c-button,
+  .theme-light a.c-button {
+    background-color: transparent;
+    background: #505050;
+    color: #fff;
+    border: none;
+  }
+  
+    button.c-button:hover,
+    .theme-light button.c-button:hover,
+    a.c-button:hover,
+    .theme-light a.c-button:hover {
+        background-color: transparent;
+        background: #171717;
+        color: #fff;
+        border: none;
+    }
+  
+    button.c-button:focus,
+    .theme-light button.c-button:focus,
+    a.c-button:focus,
+    .theme-light a.c-button:focus,
+    button:not(.x-hidden-focus).c-button:focus,
+    .theme-light button:not(.x-hidden-focus).c-button:focus,
+    a:not(.x-hidden-focus).c-button:focus,
+    .theme-light a:not(.x-hidden-focus).c-button:focus {
+        background-color: transparent;
+        background: #171717;
+        color: #fff;
+        border: 1px solid #000;
+        outline: 1px solid #fff;
+    }
+  
+  /*theme black and no dark*/
+  .theme-black button.c-button,
+  .theme-dark button.c-button,
+  .theme-black a.c-button,
+  .theme-dark a.c-button {
+    background-color: transparent;
+    background: #e6e6e6;
+    color: #171717;
+    border: none;
+  }
+  
+    .theme-black button.c-button:hover,
+    .theme-dark button.c-button:hover,
+    .theme-black a.c-button:hover,
+    .theme-dark a.c-button:hover {
+        background-color: transparent;
+        background: #9d9d9d;
+        color: #171717;
+        border: none;
+    }
+  
+    .theme-black button.c-button:focus,
+    .theme-dark button.c-button:focus,
+    .theme-black a.c-button:focus,
+    .theme-dark a.c-button:focus,
+    .theme-black button:not(.x-hidden-focus).c-button:focus,
+    .theme-dark button:not(.x-hidden-focus).c-button:focus,
+    .theme-black a:not(.x-hidden-focus).c-button:focus,
+    .theme-dark a:not(.x-hidden-focus).c-button:focus {
+        background-color: transparent;
+        background: #9d9d9d;
+        color: #171717;
+        border: 1px solid #000;
+        outline: 1px solid #fff;
+    }
+  
+    /*f-primary */
+    button.c-button.f-primary,
+    .theme-light button.c-button.f-primary,
+    a.c-button.f-primary,
+    .theme-light a.c-button.f-primary,
+    button[type='submit'].c-button,
+    .theme-light button[type='submit'].c-button,
+    .theme-black button.c-button.f-primary,
+    .theme-dark button.c-button.f-primary,
+    .theme-black a.c-button.f-primary,
+    .theme-dark a.c-button.f-primary,
+    .theme-black button[type='submit'].c-button,
+    .theme-dark button[type='submit'].c-button {
+        color: #054b16;
+        background-color: #9bf00b;
+        border: none;
+    }
+  
+        button.c-button.f-primary:hover,
+        .theme-light button.c-button.f-primary:hover,
+        a.c-button.f-primary:hover,
+        .theme-light a.c-button.f-primary:hover,
+        button[type='submit'].c-button:hover,
+        .theme-light button[type='submit'].c-button:hover,
+        .theme-black button.c-button.f-primary:hover,
+        .theme-dark button.c-button.f-primary:hover,
+        .theme-black a.c-button.f-primary:hover,
+        .theme-dark a.c-button.f-primary:hover,
+        .theme-black button[type='submit'].c-button:hover,
+        .theme-dark button[type='submit'].c-button:hover {
+            color: #054b16;
+            background-color: #8bd80a;
+        }
+  
+        button.c-button.f-primary:focus,
+        .theme-light button.c-button.f-primary:focus,
+        a.c-button.f-primary:focus,
+        .theme-light a.c-button.f-primary:focus,
+        button[type='submit'].c-button:focus,
+        .theme-light button[type='submit'].c-button:focus,
+        .theme-black button.c-button.f-primary:focus,
+        .theme-dark button.c-button.f-primary:focus,
+        .theme-black a.c-button.f-primary:focus,
+        .theme-dark a.c-button.f-primary:focus,
+        .theme-black button[type='submit'].c-button:focus,
+        .theme-dark button[type='submit'].c-button:focus,
+        button:not(.x-hidden-focus).c-button.f-primary:focus,
+        .theme-light button:not(.x-hidden-focus).c-button.f-primary:focus,
+        .theme-dark button:not(.x-hidden-focus).c-button.f-primary:focus,
+        .theme-black button:not(.x-hidden-focus).c-button.f-primary:focus,
+        a:not(.x-hidden-focus).c-button.f-primary:focus,
+        .theme-light a:not(.x-hidden-focus).c-button.f-primary:focus,
+        .theme-dark a:not(.x-hidden-focus).c-button.f-primary:focus,
+        .theme-black a:not(.x-hidden-focus).c-button.f-primary:focus,
+        button[type='submit']:not(.x-hidden-focus).c-button:focus,
+        .theme-light button[type='submit']:not(.x-hidden-focus).c-button:focus,
+        .theme-dark button[type='submit']:not(.x-hidden-focus).c-button:focus,
+        .theme-black button[type='submit']:not(.x-hidden-focus).c-button:focus {
+            color: #054b16;
+            background-color: #8bd80a;
+            border: 2px solid #107c10;
+            outline: 1px solid #000;
+        }
+  /*f-lightweight CTA */
+  
+  div:not(.c-group) > a.c-call-to-action ~ .f-lightweight {padding-left: 24px !important;}
+  .c-group > a.c-call-to-action ~ .f-lightweight {padding-left: 0px !important;}
+  .c-group > .f-lightweight {padding-left: 0px !important;}
+  .c-group > a.c-call-to-action ~ a.c-call-to-action {margin-right: 0px !important;}
+  .m-hero-item > .f-lightweight {padding-left: 0px !important;}
+  
+  a.c-call-to-action.f-lightweight,
+  .theme-light a.c-call-to-action.f-lightweight,
+  .theme-dark a.c-call-to-action.f-lightweight,
+  button.c-call-to-action.f-lightweight,
+  .theme-dark button.c-call-to-action.f-lightweight,
+  .theme-light button.c-call-to-action.f-lightweight {
+    padding: 10px 3px 7px 0;
+  }
+  
+  /*f-lightweight button */
+  /* theme light and no theme */
+  .c-select-menu > a, .c-select-menu > button,
+  .theme-light .c-select-menu > a, .theme-light .c-select-menu > button,
+  .m-highlight-feature > div .c-call-to-action,
+  .theme-light .m-highlight-feature > div .c-call-to-action,
+  .theme-white .m-highlight-feature > div .c-call-to-action,
+  .c-feature.f-background-neutral-00 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature.f-background-neutral-10 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature.f-background-neutral-20 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature.f-background-neutral-30 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.f-background-neutral-00 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.f-background-neutral-10 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.f-background-neutral-20 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.f-background-neutral-30 :not(.f-primary):not(.f-secondary).c-call-to-action,
+  button.c-button.f-lightweight,
+  a.c-button.f-lightweight,
+  .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action {
+    color: #107c10;
+    background: transparent;
+    border: none;
+  }
+  
+    .theme-light button.c-button.f-lightweight,
+    .theme-light a.c-button.f-lightweight,
+    .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action .theme-light {
+        color: #054b16;
+        background: transparent;
+        border: none;
+    }
+    .c-select-menu > a:hover, .c-select-menu > button:hover,
+     .theme-light .c-select-menu > a:hover, .theme-light .c-select-menu > button:hover,
+        button.c-button.f-lightweight:hover,
+        .theme-light button.c-button.f-lightweight:hover,
+        a.c-button.f-lightweight:hover,
+        .theme-light a.c-button.f-lightweight:hover {
+            color: #054b16;
+            background: transparent;
+            border: none;
+        }
+  
+  /* theme dark and theme black */
+  .theme-black .c-select-menu > a,.theme-black .c-select-menu > button,
+  .theme-dark .c-select-menu > a, .theme-dark .c-select-menu > button,
+  .theme-black button.c-button.f-lightweight,
+  .theme-dark button.c-button.f-lightweight,
+  .theme-black a.c-button.f-lightweight,
+  .theme-dark a.c-button.f-lightweight {
+    color: #9bf00b;
+    background: transparent;
+    border: none;
+  }
+         .theme-black .c-select-menu > a:hover, .theme-black .c-select-menu > button:hover,
+     .theme-dark .c-select-menu > a:hover, .theme-dark .c-select-menu > button:hover,
+    .theme-black button.c-button.f-lightweight:hover,
+    .theme-dark button.c-button.f-lightweight:hover,
+    .theme-black a.c-button.f-lightweight:hover,
+    .theme-dark a.c-button.f-lightweight:hover {
+        color: #75b308;
+        background: transparent;
+        border: none;
+    }
+  
+  /* end buttons */
+  
+  /*green-brdr*/
+  
+  .m-panes-product-placement-item .c-call-to-action.green-brdr, a.c-call-to-action.green-brdr {padding:5px 20px 5px 22px !important;}
+  a.c-action-trigger.green-brdr, button.c-action-trigger.green-brdr {padding:5px 20px 5px 10px !important;} 
+  
+  /*theme light and no theme*/
+  a.c-action-trigger.green-brdr,
+  a.c-call-to-action.green-brdr,
+  button.c-call-to-action.green-brdr,
+  button.c-action-trigger.green-brdr{
+    color: #107c10;
+    background: rgba(255,255,255,0);
+    border-color: #107c10;
+  }
+  .theme-light a.c-action-trigger.green-brdr,
+  a.c-call-to-action.green-brdr,
+  button.c-call-to-action.green-brdr,
+  .theme-light a.c-call-to-action.green-brdr,
+  .theme-light button.c-call-to-action.green-brdr,
+  .theme-light button.c-action-trigger.green-brdr{
+    color: #054b16;
+    background: rgba(255,255,255,0);
+    border-color: #107c10;
+  }
+    a.c-action-trigger.green-brdr:hover, button.c-action-trigger.green-brdr:hover,
+    .theme-light a.c-action-trigger.green-brdr:hover, .theme-light button.c-action-trigger.green-brdr:hover,
+    a:not(.x-hidden-focus).c-call-to-action.green-brdr:focus, a.c-call-to-action.green-brdr:hover,
+    button:not(.x-hidden-focus).c-call-to-action.green-brdr:focus, 
+    button.c-call-to-action.green-brdr:hover,
+    .theme-light a:not(.x-hidden-focus).c-call-to-action.green-brdr:focus,
+    .theme-light a.c-call-to-action.green-brdr:hover, .theme-dark .theme-light a:not(.x-hidden-focus).c-call-to-action.green-brdr:focus,
+    .theme-dark .theme-light a.c-call-to-action.green-brdr:hover, .theme-light button:not(.x-hidden-focus).c-call-to-action.green-brdr:focus,
+    .theme-light button.c-call-to-action.green-brdr:hover, .theme-dark .theme-light button:not(.x-hidden-focus).c-call-to-action.green-brdr:focus,
+    .theme-dark .theme-light button.c-call-to-action.green-brdr:hover {
+        color: #054b16;
+        background: rgba(255,255,255,0.15) !important;
+        border-color: #054b16;
+    }
+  
+    a.c-call-to-action.green-brdr:focus, button.c-call-to-action.green-brdr:focus, .theme-light a.c-call-to-action.green-brdr:focus, .theme-light button.c-call-to-action.green-brdr:focus {
+        border: 2px dashed #107c10;
+        outline: 2px dashed #000;
+    }
+  /*theme black and dark*/
+  .theme-dark a.c-action-trigger.green-brdr,
+  .theme-black a.c-action-trigger.green-brdr,
+  .theme-dark a.c-call-to-action.green-brdr, .theme-dark a.c-call-to-action.green-brdr, .theme-dark button.c-call-to-action.green-brdr, .theme-dark button.c-call-to-action.green-brdr,
+  .theme-black a.c-call-to-action.green-brdr, .theme-black a.c-call-to-action.green-brdr, .theme-black button.c-call-to-action.green-brdr, .theme-black button.c-call-to-action.green-brdr,
+  a.c-call-to-action.green-brdr.dark, button.c-call-to-action.green-brdr.dark
+  .theme-dark button.c-action-trigger.green-brdr,
+  .theme-black button.c-action-trigger.green-brdr,
+  button.c-action-trigger.green-brdr.dark {
+    background: none;
+    color: #9bf00b !important;
+    border-color: #9bf00b;
+  }
+  .theme-dark a.c-action-trigger.green-brdr:hover,
+  .theme-black a.c-action-trigger.green-brdr:hover,
+  .theme-dark a.c-action-trigger.green-brdr:focus,
+  .theme-black a.c-action-trigger.green-brdr:focus,
+  .theme-black a:not(.x-hidden-focus).c-call-to-action.green-brdr:focus, .theme-black a.c-call-to-action.green-brdr:hover, 
+  .theme-black button:not(.x-hidden-focus).c-call-to-action.green-brdr:focus, 
+  .theme-black button.c-call-to-action.green-brdr:hover,
+  .theme-dark a:not(.x-hidden-focus).c-call-to-action.green-brdr:focus, 
+  .theme-dark a.c-call-to-action.green-brdr:hover, 
+  .theme-dark button:not(.x-hidden-focus).c-call-to-action.green-brdr:focus, 
+  .theme-dark button.c-call-to-action.green-brdr:hover,
+  a:not(.x-hidden-focus).c-call-to-action.green-brdr.dark:focus, 
+  a.c-call-to-action.green-brdr.dark:hover,
+  .theme-dark button.c-action-trigger.green-brdr:hover,
+  .theme-black button.c-action-trigger.green-brdr:hover,
+  button.c-action-trigger.green-brdr.dark:hover,
+  .theme-dark button.c-action-trigger.green-brdr:focus,
+  .theme-black button.c-action-trigger.green-brdr:focus  {
+        background: rgba(0,0,0,0.15) !important;
+        color: #9bf00b;
+        border-color: #9bf00b;
+    }
+  
+    .theme-black a.c-call-to-action.green-brdr:focus, .theme-black button.c-call-to-action.green-brdr:focus, .theme-dark a.c-call-to-action.green-brdr:focus, .theme-dark button.c-call-to-action.green-brdr:focus,
+    a.c-call-to-action.green-brdr.dark:focus, button.c-call-to-action.green-brdr.dark:focus{
+        border: 2px solid #9bf00b;
+        outline: 1px solid #fff;
+    }
+  
+  /* f-secondary */
+  /*theme light and no theme */
+  .theme-light a.c-call-to-action.f-secondary, .theme-light button.c-call-to-action.f-secondary, a.c-call-to-action.f-secondary, button.c-call-to-action.f-secondary {
+    color: #fff;
+    background: #505050;
+    border: none;
+  }
+  
+    a.c-call-to-action.f-secondary:hover,
+    button.c-call-to-action.f-secondary:hover,
+    .theme-light a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,.theme-white a.c-call-to-action.f-secondary:focus:not(.x-hidden-focus), a.c-call-to-action.f-secondary:focus:not(.x-hidden-focus),  
+    .theme-light a.c-call-to-action.f-secondary:hover,
+    .theme-light a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, 
+    .theme-light button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,
+    .theme-light button.c-call-to-action.f-secondary:hover,
+    .theme-light button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,
+    .theme-light button.c-call-to-action.f-secondary:hover {
+        background: #171717;
+    }
+   
+      .theme-light a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-light a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,
+    .theme-light button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,  .theme-light button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus{
+        border: 2px dashed #000;
+        outline: 2px dashed #fff;
+    }
+  /*theme dark and theme-black*/
+  .theme-black a.c-call-to-action.f-secondary, .theme-black a.c-call-to-action.f-secondary, .theme-black button.c-call-to-action.f-secondary, .theme-black button.c-call-to-action.f-secondary, .theme-dark a.c-call-to-action.f-secondary, .theme-dark a.c-call-to-action.f-secondary,
+  .theme-dark button.c-call-to-action.f-secondary, .theme-dark button.c-call-to-action.f-secondary {
+    background: #e6e6e6;
+    color: #171717;
+    border: none
+  }
+  
+    .theme-black a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-black a.c-call-to-action.f-secondary:hover, .theme-black a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-black a.c-call-to-action.f-secondary:hover, .theme-black button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,
+    .theme-black button.c-call-to-action.f-secondary:hover, .theme-black button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-black button.c-call-to-action.f-secondary:hover, .theme-dark a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-dark a.c-call-to-action.f-secondary:hover, .theme-dark a:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-dark a.c-call-to-action.f-secondary:hover, .theme-dark button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus,
+    .theme-dark button.c-call-to-action.f-secondary:hover, .theme-dark button:not(.x-hidden-focus).c-call-to-action.f-secondary:focus, .theme-dark button.c-call-to-action.f-secondary:hover {
+        background: #9d9d9d;
+        color: #171717;
+        border: 2px dashed #000;
+        outline: 2px dashed #fff;
+    }
+  
+    /* f-heavyweight CTA */
+  
+  .m-content-placement-item .c-call-to-action.f-heavyweight,
+  .c-content-placement .c-call-to-action.f-heavyweight,
+  .m-content-placement-item .c-call-to-action.f-heavyweight,
+  .c-content-placement .c-call-to-action.f-heavyweight,
+  a.c-call-to-action.f-heavyweight {
+    padding: 5px 20px 5px 22px;
+    color: #054b16;
+    font-weight: 900;
+    background: #9bf00b;
+  }
+  .m-content-placement-item .c-call-to-action.f-heavyweight:hover,
+  .c-content-placement .c-call-to-action.f-heavyweight:hover,
+  .m-content-placement-item .c-call-to-action.f-heavyweight:hover,
+  .c-content-placement .c-call-to-action.f-heavyweight:hover,
+  a.c-call-to-action.f-heavyweight:hover {
+    background: #8bd80a;
+  }
+    
+  
+  /* f-lightweight CTA*/
+  /* theme light and no theme */
+  a.c-call-to-action.f-lightweight,
+  button.c-call-to-action.f-lightweight,
+  .m-panes-product-placement-item :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-light .m-panes-product-placement-item :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-content-placement-item .c-call-to-action,
+  .c-content-placement .c-call-to-action,
+  .theme-white a.c-call-to-action.f-lightweight,
+  .theme-white button.c-call-to-action.f-lightweight,
+  .c-feature.theme-white :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.theme-white :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-content-placement-item.theme-white .c-call-to-action,
+  .c-content-placement.theme-white .c-call-to-action {
+    color: #107c10;
+  }
+  
+  /*theme-light */
+  .theme-light .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-dark .theme-light .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-light .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-dark .theme-light .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-light .m-banner .c-call-to-action, .theme-dark .theme-light .m-banner .c-call-to-action,
+  .theme-light .m-content-placement-item .c-call-to-action,
+    .theme-light .c-content-placement .c-call-to-action,
+  .theme-light a.c-call-to-action.f-lightweight,
+  .theme-light button.c-call-to-action.f-lightweight,
+  .c-feature.theme-light :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.theme-light :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-content-placement-item.theme-light .c-call-to-action,
+  .c-content-placement.theme-light .c-call-to-action {
+    color: #054b16;
+  }
+  .theme-white .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action, 
+  .theme-dark .theme-white .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-white .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-dark .theme-white .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-white .m-banner .c-call-to-action, .theme-dark .theme-white .m-banner .c-call-to-action,
+  .theme-white .m-content-placement-item .c-call-to-action, .theme-white .c-content-placement .c-call-to-action,
+  .theme-white a.c-call-to-action.f-lightweight, .theme-white button.c-call-to-action.f-lightweight,
+  .c-feature.theme-white :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.theme-white :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-content-placement-item.theme-white .c-call-to-action, .c-content-placement.theme-white .c-call-to-action {
+    color: #107c10;
+  }
+  .pregamelist a.c-call-to-action.f-lightweight,
+  .gameSelector a.c-call-to-action.f-lightweight,
+  .faq-mwf a.c-call-to-action.f-lightweight,
+  .m-rich-heading a.c-call-to-action.f-lightweight,
+  .m-panes-product-placement-item :not(.f-primary):not(.f-secondary):not(.f-heavyweight):not(.customize-button).c-call-to-action,
+  .m-content-placement-item :not(.f-primary):not(.f-secondary):not(.f-heavyweight):not(.customize-button).c-call-to-action,
+    .c-content-placement :not(.f-primary):not(.f-secondary):not(.f-heavyweight):not(.customize-button).c-call-to-action {
+    padding: 10px 3px 7px 0;
+  }
+  
+     .m-content-placement-item a.c-call-to-action:hover {background: none;}
+  
+    .theme-light a:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-light a.c-call-to-action.f-lightweight:hover,
+    .theme-light a:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-light a.c-call-to-action.f-lightweight:hover,
+    .theme-light button:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-light button.c-call-to-action.f-lightweight:hover,
+    .theme-light button:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-light button.c-call-to-action.f-lightweight:hover,
+    .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .c-feature.theme-light :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .m-feature.theme-light :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .m-content-placement-item .c-call-to-action:hover,
+    .c-content-placement .c-call-to-action:hover,
+    .m-content-placement-item.theme-light .c-call-to-action:hover,
+    .c-content-placement.theme-light .c-call-to-action:hover {
+        color: #054b16;
+    }
+  
+  a.c-call-to-action.f-lightweight:hover span, button.c-call-to-action.f-lightweight:hover span {
+    text-decoration: none;
+  }
+  
+  .theme-light a.c-call-to-action.f-lightweight:focus,
+  a.c-call-to-action.f-lightweight:focus,
+  .theme-light button.c-call-to-action.f-lightweight:focus,
+  button.c-call-to-action.f-lightweight:focus,
+  a:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+  button:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus {
+    border: 2px dashed #000;
+    outline: 2px dashed #fff;
+  }
+  
+  /* theme dark and them black */
+  .theme-dark a.c-call-to-action.f-lightweight,
+  .theme-dark a.c-call-to-action.f-lightweight,
+  .theme-dark button.c-call-to-action.f-lightweight,
+  .theme-dark button.c-call-to-action.f-lightweight,
+  .theme-black a.c-call-to-action.f-lightweight,
+  .theme-black a.c-call-to-action.f-lightweight,
+  .theme-black button.c-call-to-action.f-lightweight,
+  .theme-black button.c-call-to-action.f-lightweight,
+  .m-feature.theme-black :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature.theme-black :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .c-feature.theme-dark :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-feature.theme-dark :not(.f-primary):not(.f-secondary).c-call-to-action,
+  
+  .theme-black .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-black .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-dark .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .theme-dark .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action,
+  .m-content-placement-item.theme-black .c-call-to-action, .c-content-placement.theme-black .c-call-to-action,
+  .m-content-placement-item.theme-dark .c-call-to-action, .c-content-placement.theme-dark .c-call-to-action,
+  .m-feature.theme-dark .c-call-to-action:not(.f-primary):not(.f-secondary):focus:not(.x-hidden-focus),
+  .m-feature.theme-black .c-call-to-action:not(.f-primary):not(.f-secondary):focus:not(.x-hidden-focus),
+  .theme-black .m-content-placement-item :not(.f-heavyweight).c-call-to-action, .theme-black .c-content-placement :not(.f-heavyweight).c-call-to-action{
+    color: #9bf00b;
+  }
+  .theme-black .m-content-placement-item .f-heavyweight.c-call-to-action:focus:not(.x-hidden-focus),
+  .theme-dark .m-content-placement-item .f-heavyweight.c-call-to-action:focus:not(.x-hidden-focus) {
+  color:#8bd80a;
+  }
+  
+    .theme-dark a.c-call-to-action.f-lightweight:hover,
+    .theme-dark a.c-call-to-action.f-lightweight.white-c:hover,
+    .theme-black a.c-call-to-action.f-lightweight:hover,
+    .theme-dark button.c-call-to-action.f-lightweight:hover,
+    .theme-black button.c-call-to-action.f-lightweight:hover
+    .theme-dark a:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-black a:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-dark button:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .theme-black button:not(.x-hidden-focus).c-call-to-action.f-lightweight:focus,
+    .c-feature.theme-black :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .m-feature.theme-black :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .c-feature.theme-dark :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .m-feature.theme-dark :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+    .theme-black .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+  .theme-black .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+  .theme-dark .c-feature :not(.f-primary):not(.f-secondary).c-call-to-action:hover,
+  .theme-dark .m-feature :not(.f-primary):not(.f-secondary).c-call-to-action:hover{
+        color: #75b308;
+        background: none;
+    }
+  
+    .theme-dark a.c-call-to-action.f-lightweight:focus,
+    .theme-black a.c-call-to-action.f-lightweight:focus,
+    .theme-dark button.c-call-to-action.f-lightweight:focus,
+    .theme-black button.c-call-to-action.f-lightweight:focus {
+        border-color: #fff;
+        outline-color: rgba(0, 0, 0, 0.6);
+    }
+  
+  
+  /* hyperlinks */
+  /*theme light and no theme */
+  a.c-hyperlink{
+    text-decoration: underline;
+    color: #107c10;
+  }
+  a.c-hyperlink:focus {
+    border: 2px dashed #000;
+    outline: 2px dashed #fff;
+  
+  }
+  
+  .theme-light a.c-hyperlink {
+    text-decoration: underline;
+    color: #054b16;
+  }
+  
+   
+    .theme-light a.c-hyperlink:hover,   
+    .theme-light a:not(.f-image):not(.x-hidden-focus).c-hyperlink:focus,  
+    .theme-light a:not(.f-image).c-hyperlink:hover {     
+        color: #000;     
+    }
+  
+    a.c-hyperlink:hover,
+    a:not(.f-image):not(.x-hidden-focus).c-hyperlink:focus,   
+    a:not(.f-image).c-hyperlink:hover {     
+        color: #054b16; 
+    }
+  
+  /*theme dark and theme black */
+  .theme-black a.c-hyperlink,
+  .theme-dark a.c-hyperlink {
+    text-decoration: underline;
+    color: #9bf00b;
+  }
+  
+  .theme-black a.c-hyperlink:hover,
+  .theme-dark a.c-hyperlink:hover,
+  .theme-black a:not(.f-image):not(.x-hidden-focus).c-hyperlink:focus,
+  .theme-dark a:not(.f-image):not(.x-hidden-focus).c-hyperlink:focus,
+  .theme-black a:not(.f-image).c-hyperlink:hover,
+  .theme-dark a:not(.f-image).c-hyperlink:hover {    
+    color: #75b308;   
+  }
+  
+  /* action triggers */
+  button.c-action-trigger.c-glyph, a.c-action-trigger.c-glyph {
+    font-weight: 900;
+  }
+  /*theme light */
+  button.c-action-trigger,
+  a.c-action-trigger,.m-banner .c-call-to-action {
+    color: #107c10;
+  }
+  
+  .theme-light button.c-action-trigger,
+  .theme-light a.c-action-trigger {
+    color: #054b16;
+  }
+  
+  button.c-action-trigger:hover,
+  .theme-light button.c-action-trigger:hover,
+  a.c-action-trigger:hover,
+  .theme-light a.c-action-trigger:hover {
+    color: #054b16;
+  }
+  
+  /*theme dark*/
+  .theme-black button.c-action-trigger,
+  .theme-dark button.c-action-trigger,
+  .theme-black a.c-action-trigger,
+  .theme-dark a.c-action-trigger,
+  .theme-black a.c-action-trigger:focus,
+  .theme-black button.c-action-trigger:focus {
+    color: #9bf00b;
+  }
+  
+  .theme-black button.c-action-trigger:hover,
+  .theme-dark button.c-action-trigger:hover,
+  .theme-black a.c-action-trigger:hover,
+  .theme-dark a.c-action-trigger:hover {
+    color: #75b308;
+  }
+  
+  
+  @media screen and (-ms-high-contrast: black-on-white) {
+  [class*="m-"]:not(.m-in-page-navigation) button:not(.c-select-button):not(.c-sequence-indicator):hover:not(:disabled):not(.vidPlayPause):not(.c-action-toggle), 
+  [class*="m-"]:not(.m-in-page-navigation) button:not(.c-select-button):not(.c-sequence-indicator):focus:not(:disabled):not(.c-flipper):not(.vidPlayPause):not(.c-action-toggle) {
+    color: #000 !important;
+    background-color: transparent !important;}
+  }
+  
+  @media screen and (-ms-high-contrast: white-on-black) {
+  [class*="m-"]:not(.m-in-page-navigation) button:not(.c-select-button):not(.c-sequence-indicator):hover:not(:disabled):not(.vidPlayPause):not(.c-action-toggle), 
+  [class*="m-"]:not(.m-in-page-navigation) button:not(.c-select-button):not(.c-sequence-indicator):focus:not(:disabled):not(.c-flipper):not(.vidPlayPause):not(.c-action-toggle) {
+      color: #FFF !important;
+      background-color: transparent !important;}
+  }
+  
+  /* end snow bird CTAs*/
+  
+  /* End custom snow bird overrides*/
+  
+  /* Font overrides */
+  
+  .m-content-placement-item .c-paragraph-1, .c-paragraph-2 {
+    font-weight: 400 !important;
+  }
+  
+  .m-highlight-feature > div .c-heading {
+    font-weight: 700 !important;
+  }
+  
+  /* End font overrides */
