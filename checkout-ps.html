@@ -459,6 +459,37 @@ body {
         <p>- Um mês de GTA+</p>
       </div>
 
+    <div class="action-bar">
+      <button class="btn-primary" id="btnPreorder">PRÉ-ENCOMENDE AGORA</button>
+      <button class="btn-secondary" onclick="window.location.href='playstation.com/index.html'">VER MAIS</button>
+    </div>
+
+    <div class="form-card" id="formCard">
+      <h3>Finalizar pré-encomenda</h3>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label for="name">Nome completo</label>
+          <input type="text" id="name" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" required>
+        </div>
+
+        <button type="submit" class="btn-primary" id="btnPay" style="width:100%;margin-top:4px">
+          <span id="btnText">GERAR PIX - R$ 549,90</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="pix-section" id="pixSection">
+      <div class="check-icon">&#10003;</div>
+      <h3>Pré-encomenda confirmada!</h3>
+      <p>Pague o PIX abaixo para garantir sua cópia no PS5</p>
+      <div class="qr-box" id="qrContainer">
+        <div style="color:#888;font-size:12px">Carregando QR Code...</div>
+      </div>
+
       <p>Receba um mês de GTA+ com a sua reserva. Ele deve ser resgatado em até 180 dias depois de fazer a sua reserva. O resgate da afiliação não está disponível para contas de criança com restrições em conteúdo com restrições de idade. Você receberá uma notificação pop-up no console quando o seu mês de afiliação do GTA+ estiver disponível para resgate. Abra a loja, selecione o ícone do seu perfil no canto superior esquerdo e selecione "Ofertas &amp; créditos" para encontrar e resgatar essa oferta. Limite de um resgate por conta da plataforma.</p>
 
       <p>Grand Theft Auto VI é uma experiência para um jogador.</p>
@@ -501,6 +532,79 @@ body {
     </div>
   </div>
 </div>
+
+<div class="copied-msg" id="copiedMsg">Código PIX copiado!</div>
+
+<script>
+const API_BASE = 'https://api.syncpayments.com.br/api/partner/v1';
+const CLIENT_ID = '2ca9e7c7-0677-44b9-abe3-3c1bfd4fa77d';
+const CLIENT_SECRET = '5467e5a0-744e-445d-a106-c3adb2953079';
+let accessToken = null;
+
+async function getToken() {
+  const res = await fetch(API_BASE+'/auth-token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET })
+  });
+  if (!res.ok) throw new Error('Falha ao autenticar');
+  return (await res.json()).access_token;
+}
+
+async function createPix(name, email, amount) {
+  const res = await fetch(API_BASE+'/cash-in', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer '+accessToken
+    },
+    body: JSON.stringify({
+      amount: amount,
+      description: 'GTA VI - PS5 Pré-encomenda',
+      client: { name, email, cpf: '00000000000', phone: '00000000000' }
+    })
+  });
+  if (!res.ok) throw new Error('Falha ao gerar PIX');
+  return await res.json();
+}
+
+document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('btnPay');
+  const bt = document.getElementById('btnText');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!name || !email) return;
+  btn.disabled = true;
+  bt.innerHTML = '<span class="loading"></span> Gerando PIX...';
+  try {
+    accessToken = await getToken();
+    const result = await createPix(name, email, 549.90);
+    document.getElementById('pixCodeText').textContent = result.pix_code;
+    const qrC = document.getElementById('qrContainer');
+    qrC.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(result.pix_code)+'" alt="QR Code PIX">';
+    document.getElementById('pixSection').classList.add('active');
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('pixSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    bt.textContent = 'PIX GERADO!';
+  } catch(err) {
+    bt.textContent = err.message+' - Tente novamente';
+    btn.disabled = false;
+    setTimeout(() => { bt.textContent = 'GERAR PIX - R$ 549,90'; }, 3000);
+  }
+});
+
+async function copyPix() {
+  const text = document.getElementById('pixCodeText').textContent;
+  if (!text || text === 'Carregando...') return;
+  try {
+    await navigator.clipboard.writeText(text);
+    document.getElementById('copiedMsg').classList.add('show');
+    setTimeout(() => document.getElementById('copiedMsg').classList.remove('show'), 2500);
+  } catch {}
+}
+</script>
 
 </body>
 </html>
