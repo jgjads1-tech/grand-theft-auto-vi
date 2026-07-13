@@ -13,17 +13,15 @@ Site de pré-venda do GTA VI com páginas de checkout para PlayStation e Xbox, h
 | Arquivo/Pasta | Descrição |
 |---|---|
 | `index.html` | Página inicial |
-| `checkout-ps.html` | Checkout PS5 Ultimate Edition (R$ 549,90) com PIX |
-| `checkout-ps-standard.html` | Checkout PS5 Standard Edition (R$ 449,90) com PIX |
-| `checkout-xbox.html` | Checkout Xbox Standard (R$ 599,90) com PIX |
-| `checkout-xbox-standard.html` | Checkout Xbox Standard (R$ 449,90) com PIX |
-| `checkout.html` | Checkout GTA VI (estilo PlayStation) |
-| `checkout-ultimate.html` | Checkout Ultimate Edition (R$ 549,90) |
 | `proxy.php` | Proxy CORS para API SyncPay (PHP) |
-| `playstation.com/` | Página da PlayStation Store + assets (CSS, JS, fonts, images) |
+| `playstation.com/` | Página da PlayStation Store + assets |
 | `xbox.com/` | Página da Xbox Store + assets |
-| `css/` | Assets CSS |
-| `js/` | Assets JS |
+| `pagamento-playstation.com/Standard-Edition/` | Checkout PS5 Standard (R$ 449,90) com PIX |
+| `pagamento-playstation.com/Ultimate-Edition/` | Checkout PS5 Ultimate (R$ 549,90) com PIX |
+| `pagamento-xbox.com/Standard-Edition/` | Checkout Xbox Standard (R$ 449,90) com PIX |
+| `pagamento-xbox.com/Ultimate-Edition/` | Checkout Xbox Ultimate (R$ 549,90) com PIX |
+| `css/` | Assets CSS globais |
+| `js/` | Assets JS globais |
 | `fonts/` | Fontes |
 | `images/` | Imagens estáticas |
 | `CNAME` | Domínio personalizado GitHub Pages |
